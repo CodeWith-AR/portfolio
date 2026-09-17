@@ -1,0 +1,332 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Abdur Rehman — Modern Spatial Bento &amp; Interactive Matrix</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Syne:wght@600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#070709',
+              900: '#0e0e11',
+              850: '#131316',
+              800: '#1c1b22',
+              750: '#25242d',
+              700: '#32313b',
+            },
+            crimson: {
+              400: '#ff3344',
+              500: '#e50914',
+              600: '#b80710',
+              accent: '#ff2a55',
+            },
+            amberAccent: '#eab308',
+          },
+          animation: {
+            'breathing': 'breathingGlow 3.5s ease-in-out infinite',
+            'breathing-slow': 'breathingGlow 4.5s ease-in-out infinite 0.7s',
+            'breathing-delayed': 'breathingGlow 4s ease-in-out infinite 1.4s',
+            'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+          },
+          keyframes: {
+            breathingGlow: {
+              '0%, 100%': {
+                borderColor: 'rgba(234, 179, 8, 0.35)',
+                boxShadow: '0 0 14px rgba(234, 179, 8, 0.12), inset 0 0 8px rgba(234, 179, 8, 0.05)',
+                transform: 'translateY(0px)'
+              },
+              '50%': {
+                borderColor: 'rgba(234, 179, 8, 0.85)',
+                boxShadow: '0 0 28px rgba(234, 179, 8, 0.35), inset 0 0 12px rgba(234, 179, 8, 0.15)',
+                transform: 'translateY(-3px)'
+              },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '0.8' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .glass-nav {
+      background: rgba(14, 14, 17, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+    }
+    .glass-pill {
+      background: rgba(14, 14, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(234, 179, 8, 0.45);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-pill:hover {
+      background: rgba(26, 26, 34, 0.95);
+      border-color: rgba(234, 179, 8, 1);
+      box-shadow: 0 0 30px rgba(234, 179, 8, 0.45), inset 0 0 15px rgba(234, 179, 8, 0.2);
+      transform: translateY(-4px) scale(1.02);
+    }
+    .bento-card {
+      background: radial-gradient(120% 120% at 50% 0%, rgba(28, 27, 34, 0.6) 0%, rgba(14, 14, 17, 0.85) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-card:hover {
+      border-color: rgba(229, 9, 20, 0.4);
+      box-shadow: 0 15px 35px -10px rgba(229, 9, 20, 0.2), inset 0 0 20px rgba(229, 9, 20, 0.05);
+      transform: translateY(-3px);
+    }
+    .text-glow-crimson {
+      text-shadow: 0 0 24px rgba(229, 9, 20, 0.75), 0 0 45px rgba(229, 9, 20, 0.35);
+    }
+    .text-glow-pink {
+      text-shadow: 0 0 20px rgba(255, 42, 85, 0.7);
+    }
+    .perspective-container {
+      perspective: 1000px;
+    }
+    .tab-active {
+      background: linear-gradient(135deg, #e50914, #b80710);
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    }
+    /* Hide scrollbars for clean carousel preview */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-obsidian-950 text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-crimson-500 selection:text-white">
+<!-- BEGIN: Floating Navigation Bar -->
+
+<!-- END: Floating Navigation Bar -->
+<!-- BEGIN: Hero Section -->
+
+<!-- END: Hero Section -->
+<!-- BEGIN: Domain Rotator Widget (Faithful reproduction of https://lh3.googleusercontent.com/aida-public/AB6AXuBi6WjNp1VA2ZrGy_xSEzmmW-MKxDN3Rwn-Cz3On-oyACVeTwIGl33eWeYmrrnerqPQVZ4Ljuhpeok1jgS_uOBr5ExNUBVJc22Rddy8xnvQzCi9OG12DAVsDIDKilK_P6RlhG5JUQYV45eb0yP3wh8W7GEXgKebToalmtKLbBtuVzTVWhiNVGcuQtQN_ALYL0DcConbR_4zpHmVpiNzF4z2K5nFi3DNaCmcFzpqi7tv4Y2JdTB9QD4lyDqihbSFR8w7Zg) -->
+
+<!-- END: Domain Rotator Widget -->
+<!-- BEGIN: Interactive Bento Grid for Skills & Languages -->
+
+<!-- END: Interactive Bento Grid -->
+<!-- BEGIN: Categorized Projects with Filterable Tabs -->
+
+<!-- END: Categorized Projects -->
+<!-- BEGIN: Certifications & Honours 3D Carousel (Modeled faithfully after https://lh3.googleusercontent.com/aida-public/AB6AXuD2y__AHsCggBYQsOW0nTjW5iHphnFCuwdR92cuyKDC-ajVJlDnNAWC9vLwcL8I3pfVYxnI_BSvnhIW2vIhGvwI_5OB4gTWDq6l_AgAqiW65aKoFmXAVBmHr87VleHC6uliKUAHUoBihbtwHTSaX-2cwVfB9TLH9DCIrLC25l0pcXIEESSZRsoR4TvIcimm5OS0iRidIung9pJb2ZIFmcVd5NRiTVcgaOAIz743DuI2hRUMx0mHbZbrPuQaWZb20Gr4PA) -->
+
+<!-- END: Certifications 3D Carousel -->
+<!-- BEGIN: Contact & Footer Conclusion -->
+<footer class="relative border-white/10 bg-obsidian-900/90 pt-20 pb-12 overflow-hidden min-h-screen" id="contact">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-64 bg-crimson-600/15 blur-[100px] pointer-events-none rounded-full"></div>
+<div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono mb-3">
+<span class="">LET'S CONNECT</span>
+</div>
+<h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight"></h2><h2 class="font-display text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-weight: 900; --tw-text-opacity: 1; color: rgb(255, 255, 255); background-color: rgb(14, 14, 17); outline: none !important; box-shadow: none !important;">Let's Build Something <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-crimson-600 text-glow-crimson" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; text-shadow: rgba(229, 9, 20, 0.7) 0px 0px 24px, rgba(229, 9, 20, 0.35) 0px 0px 50px; background-image: linear-gradient(to right, rgb(255, 77, 90), rgb(229, 9, 20), rgb(184, 7, 16)); --tw-gradient-from: #ff4d5a; --tw-gradient-to: #b80710; --tw-gradient-stops: #ff4d5a , #e50914 , #b80710;">Together</span></h2>
+<p class="text-neutral-400 text-sm sm:text-base mt-3">
+        Available for full-time software engineering roles, mobile apps, and machine learning applications.
+      </p>
+</div>
+<!-- Direct Contact Matrix Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+<!-- Email Card -->
+<a class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" href="mailto:contact@rehman.dev">
+<div class="w-12 h-12 rounded-2xl bg-crimson-500/15 border border-crimson-500/30 flex items-center justify-center text-crimson-400 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<h4 class="font-display font-bold text-white text-base mb-1">Direct Email</h4>
+<p class="text-neutral-400 text-xs mb-3 font-mono">mailrehman90527300@gmail.com</p>
+<span class="text-xs font-semibold text-crimson-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          Send Message →
+        </span>
+</a>
+<!-- LinkedIn Card -->
+<a class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<div class="w-12 h-12 rounded-2xl bg-amberAccent/15 border border-amberAccent/30 flex items-center justify-center text-amberAccent mb-4 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6 text-amberAccent" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.67 1.67 0 1 0 0-3.34 1.67 1.67 0 0 0 0 3.34m1.4 10.74v-8.37H5.06v8.37h2.8z"></path>
+</svg>
+</div>
+<h4 class="font-display font-bold text-white text-base mb-1">LinkedIn Network</h4>
+<p class="text-neutral-400 text-xs mb-3 font-mono">&nbsp;in/rehman90/</p>
+<span class="text-xs font-semibold text-amberAccent flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          Connect Profile →
+        </span>
+</a>
+<!-- GitHub Card -->
+<a class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h4 class="font-display font-bold text-white text-base mb-1">GitHub Repositories</h4>
+<p class="text-neutral-400 text-xs mb-3 font-mono">github.com/CodeWith-AR</p>
+<span class="text-xs font-semibold text-neutral-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          View Codebases →
+        </span>
+</a>
+</div>
+<!-- Bottom Footer Strip -->
+<div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-400 text-xs">
+<p class="">© 2026 Abdur Rehman. Crafted with precision &amp; modern spatial elegance.</p>
+<div class="flex items-center gap-6 font-mono text-xs">
+<a class="hover:text-white transition-colors" href="#home">Back to top ↑</a>
+<a class="hover:text-white transition-colors" href="#skills">Skills</a>
+<a class="hover:text-white transition-colors" href="#projects">Projects</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Contact & Footer Conclusion -->
+<!-- Interactive Scripts for Domain Rotator, Tabs, and Certifications -->
+<script>
+  // --- 1. DOMAIN ROTATOR LOGIC ---
+  const domainData = [
+    { title: "Web Tech", sub: "Full-Stack & Scalable Systems", icon: "html" },
+    { title: "Mobile Apps", sub: "Flutter, Android & Cross-Platform", icon: "phone_android" },
+    { title: "AI & ML", sub: "Deep Learning & Cyber Defense", icon: "psychology" },
+    { title: "Systems & Core", sub: "Algorithms & Low-Level Architecture", icon: "memory" }
+  ];
+  let domainIndex = 0;
+
+  function updateDomainDisplay() {
+    const prevIndex = (domainIndex - 1 + domainData.length) % domainData.length;
+    const nextIndex = (domainIndex + 1) % domainData.length;
+
+    const leftCard = document.getElementById("domainCardLeft");
+    const centerTitle = document.getElementById("domainCardTitle");
+    const centerSubtitle = document.getElementById("domainCardSubtitle");
+    const rightCard = document.getElementById("domainCardRight");
+
+    centerTitle.textContent = domainData[domainIndex].title;
+    centerSubtitle.textContent = domainData[domainIndex].sub;
+
+    leftCard.querySelector(".font-display").textContent = domainData[prevIndex].title;
+    leftCard.querySelector(".material-symbols-outlined").textContent = domainData[prevIndex].icon;
+
+    rightCard.querySelector(".font-display").textContent = domainData[nextIndex].title;
+    rightCard.querySelector(".material-symbols-outlined").textContent = domainData[nextIndex].icon;
+  }
+
+  function rotateDomain(dir) {
+    domainIndex = (domainIndex + dir + domainData.length) % domainData.length;
+    updateDomainDisplay();
+  }
+
+  // --- 2. PROJECTS TAB FILTER LOGIC ---
+  function filterProjects(category) {
+    const buttons = document.querySelectorAll(".tab-btn");
+    buttons.forEach(btn => {
+      btn.classList.remove("tab-active", "text-white");
+      btn.classList.add("text-neutral-400");
+    });
+    const activeBtn = document.getElementById("tab-" + category);
+    if (activeBtn) {
+      activeBtn.classList.add("tab-active");
+      activeBtn.classList.remove("text-neutral-400");
+    }
+
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach(card => {
+      if (category === "all" || card.getAttribute("data-category") === category) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // --- 3. CERTIFICATIONS 3D CAROUSEL LOGIC ---
+  const certList = [
+    {
+      title: "Computer Science Principles",
+      issuer: "Saylor University",
+      docOrg: "SAYLOR ACADEMY",
+      docTitle: "Computer Science Principles",
+      docId: "ID: SYL-948210"
+    },
+    {
+      title: "Full-Stack Development Fellowship",
+      issuer: "Kodex Byte",
+      docOrg: "KODEX BYTE",
+      docTitle: "Advanced Full-Stack Engineering",
+      docId: "ID: KDX-88219"
+    },
+    {
+      title: "Financial Analytics & Modeling",
+      issuer: "Financial Training Institute",
+      docOrg: "FTI GLOBAL",
+      docTitle: "Financial Tech & Systems",
+      docId: "ID: FTI-41920"
+    },
+    {
+      title: "NUML Open House Excellence Award",
+      issuer: "NUML University",
+      docOrg: "NUML DEPT OF CS",
+      docTitle: "Project Innovation Laureate",
+      docId: "ID: NUML-OH-2025"
+    },
+    {
+      title: "PMYP Laptop Merit Award",
+      issuer: "Prime Minister's Youth Program",
+      docOrg: "GOVT SCHEME OF MERIT",
+      docTitle: "Academic Academic Distinction",
+      docId: "ID: PMYP-77123"
+    }
+  ];
+  let certIndex = 0;
+
+  function updateCertDisplay() {
+    const cert = certList[certIndex];
+    document.getElementById("certTitle").textContent = cert.title;
+    document.getElementById("certIssuer").textContent = cert.issuer;
+    document.getElementById("certDocOrg").textContent = cert.docOrg;
+    document.getElementById("certDocTitle").textContent = cert.docTitle;
+    document.getElementById("certDocID").textContent = cert.docId;
+
+    const indicators = document.getElementById("certIndicators").children;
+    for (let i = 0; i < indicators.length; i++) {
+      if (i === certIndex) {
+        indicators[i].className = "w-2 h-2 rounded-full bg-[#ff2a6d] shadow-[0_0_6px_#ff2a6d]";
+      } else {
+        indicators[i].className = "w-2 h-2 rounded-full bg-white/20";
+      }
+    }
+  }
+
+  function rotateCert(dir) {
+    certIndex = (certIndex + dir + certList.length) % certList.length;
+    updateCertDisplay();
+  }
+
+  // Initialize displays on DOM ready
+  document.addEventListener("DOMContentLoaded", () => {
+    updateDomainDisplay();
+    updateCertDisplay();
+  });
+</script>
+
+
+
+
+</body></html>

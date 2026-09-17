@@ -1,0 +1,209 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Abdur Rehman — Obsidian Cybernetic Systems Portfolio</title>
+<!-- Google Fonts: Syne, Outfit, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#060608',
+              900: '#0c0c0f',
+              850: '#121216',
+              800: '#1a191e',
+              750: '#201f24',
+              700: '#2a2930',
+            },
+            crimson: {
+              400: '#ff4d5a',
+              500: '#e50914',
+              600: '#b80710',
+              700: '#8b050c',
+            },
+            amberAccent: '#eab308',
+          }
+        }
+      }
+    }
+</script>
+<!-- Custom Styles: Frosted Glass, Precision Borders & Ambient Glows -->
+<style data-purpose="cybernetic-styles">
+    .frosted-glass-card {
+      background: linear-gradient(135deg, rgba(18, 18, 22, 0.82) 0%, rgba(10, 10, 13, 0.92) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .frosted-glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(229, 9, 20, 0.35);
+      box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.85), 0 0 25px -5px rgba(229, 9, 20, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .pill-tag {
+      background: rgba(18, 18, 23, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pill-tag:hover {
+      background: rgba(28, 27, 34, 0.95);
+      border-color: rgba(229, 9, 20, 0.45);
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(229, 9, 20, 0.15);
+      color: #ffffff;
+    }
+
+    .text-glow-crimson {
+      text-shadow: 0 0 25px rgba(229, 9, 20, 0.75), 0 0 50px rgba(229, 9, 20, 0.35);
+    }
+
+    .badge-glow {
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.15), inset 0 0 8px rgba(229, 9, 20, 0.08);
+    }
+</style>
+</head>
+<body class="bg-obsidian-950 text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-crimson-500 selection:text-white">
+<!-- BEGIN: SkillsSection -->
+<section class="relative min-h-screen w-full flex items-center justify-center py-24 sm:py-32 bg-obsidian-950 overflow-hidden" id="skills">
+<!-- Subtle multi-layer ambient flares -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] bg-crimson-500/[0.08] blur-[150px] rounded-full pointer-events-none"></div>
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[280px] bg-crimson-600/[0.12] blur-[100px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-amber-500/[0.03] blur-[140px] rounded-full pointer-events-none"></div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<!-- Header Area -->
+<div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono tracking-widest uppercase mb-5 badge-glow">
+<span class="w-1.5 h-1.5 rounded-full bg-crimson-500 animate-pulse"></span>
+        [ 03 // TECHNICAL ARSENAL ]
+      </div>
+<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+        Comprehensive <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-crimson-600 text-glow-crimson">Skillset</span>
+</h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans font-light">
+        Engineered with clean architectural principles, high efficiency, and production robustness.
+      </p>
+</div>
+<!-- 4-Column Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+<!-- Card 1: Programming & Scripting -->
+<div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+<!-- Precision Top Border Highlight -->
+<div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent group-hover:via-crimson-500 transition-all duration-500"></div>
+<div>
+<!-- Icon Header with Ambient Halo -->
+<div class="relative w-12 h-12 mb-6">
+<div class="absolute inset-0 rounded-xl bg-crimson-500/20 blur-md group-hover:blur-lg group-hover:bg-crimson-500/30 transition-all"></div>
+<div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-crimson-500/30 flex items-center justify-center text-crimson-400 shadow-inner group-hover:border-crimson-500/60 transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<polyline points="16 18 22 12 16 6"></polyline>
+<polyline points="8 6 2 12 8 18"></polyline>
+</svg>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Programming &amp; Scripting</h3>
+<p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-crimson-400"></span>
+            Core Languages
+          </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 pt-1"><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M4.1 12.5L12 4.6l5.7 5.7-1.4 1.4-4.3-4.3-6.5 6.5 1.4 1.4 4.3-4.3L17 19.8l2.9-2.9L12 9l-4.3 4.3 1.4 1.4 2.9-2.9L17 17l-5 5-7.9-9.5z" fill="#00B4AB"></path><path d="M12 4.6L4.1 12.5 2 10.4 10.4 2l1.6 2.6z" fill="#0175C2"></path><path d="M17.7 10.3L12 4.6l1.6-2.6 7.8 7.8-3.7.5z" fill="#02569B"></path><path d="M12 22l-7.9-9.5 2.1-2.1L12 16.2V22z" fill="#00B4AB"></path><path d="M12 22l7.9-5.1-2.9 2.9-5 2.2z" fill="#0175C2"></path></svg>Dart</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M11.87 2c-5.4 0-5.06 2.34-5.06 2.34l.01 2.42h5.15v.73H4.82S2 7.15 2 12.58c0 5.43 2.46 5.24 2.46 5.24h1.47v-2.07s-.08-2.46 2.42-2.46h5.12s2.34.04 2.34-2.29V4.38S16.27 2 11.87 2zm-1.41 1.54a.79.79 0 1 1 0 1.58.79.79 0 0 1 0-1.58z" fill="#3776AB"></path><path d="M12.13 22c5.4 0 5.06-2.34 5.06-2.34l-.01-2.42h-5.15v-.73h7.15s2.82.34 2.82-5.09c0-5.43-2.46-5.24-2.46-5.24h-1.47v2.07s.08 2.46-2.42 2.46H10.5s-2.34-.04-2.34 2.29v8.62S7.73 22 12.13 22zm1.41-1.54a.79.79 0 1 1 0-1.58.79.79 0 0 1 0 1.58z" fill="#FFD43B"></path></svg>Python</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M11.5 3.5a8.5 8.5 0 1 0 5.8 14.7l-2-2.3a5.5 5.5 0 1 1-3.8-9.4 5.4 5.4 0 0 1 3.7 1.5l2-2.3A8.4 8.4 0 0 0 11.5 3.5z" fill="#00599C"></path><path d="M18 10h1v1.5H18v1h-1.5v-1H15V10h1.5V8.5H18V10zm4 0h1v1.5H22v1h-1.5v-1H19V10h1.5V8.5H22V10z" fill="#659AD2"></path></svg>C++</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M8.8 17.5c2.9.2 5.5-.1 8-.9 0 0 .5.7-.6 1.3-2.9 1.4-8 .9-9.9-.1 0 0 .7-.3 2.5-.3z" fill="#5382A1"></path><path d="M7.7 15.6c2.4.2 4.5.1 6.5-.5 0 0 .4.6-.5 1-2.4 1.1-6.6.7-8.1-.1 0 0 .5-.3 2.1-.4z" fill="#E76F00"></path><path d="M13 10.3c1 .9 2.2 2.1 1.2 3.5-.8 1.1-2.4 1.4-3.6 1.4-1.9 0-3.5-.7-4.2-1.3-.2-.2-.1-.5.1-.6.3-.1 1.1.2 2.7.2 1.3 0 2.9-.3 3.5-.9.9-.9.4-1.8-.1-2.4-.7-.8-1.5-1.5-1.5-2.6 0-1.1.7-2 1.4-2.8.2-.2.5-.1.5.1.2.9.8 1.9 1.5 2.6.4.4.9.9 1.3 1.5 0 0-.8-.1-1.3-.4-.6-.4-1.3-.9-1.5-1.5.7 1.3 2.1 2.3 2.5 3.4.1.3 0 .7-.2 1-.3.5-.8.8-1.4.9-.7.1-1.4 0-2.1-.2 1.1-.3 1.8-.8 2-1.5.1-.6-.2-1.1-.7-1.4l-.5-.3z" fill="#E76F00"></path><path d="M18.8 15.2c.4-.7.6-1.5.5-2.3 0-.1-.1-.2-.2-.2-.1 0-.2.1-.2.2-.1 1.1-.6 2.1-1.4 2.8 1-.2 1.2-.4 1.3-.5z" fill="#5382A1"></path></svg>Java</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 rounded-[2px]" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="3" fill="#F7DF1E"></rect><path d="M7.5 18c-.8 0-1.5-.2-2-.6l.7-1.5c.4.3.8.5 1.4.5.6 0 .9-.3.9-.9v-5.2h1.9v5.3c0 1.7-1 2.4-2.9 2.4zm8.2 0c-2 0-3.2-1.1-3.2-2.7 0-1.5.9-2.2 2.4-2.7l.7-.3c.7-.2 1-.5 1-.9 0-.5-.4-.8-1.1-.8-.6 0-1.2.2-1.7.6l-.7-1.4c.7-.5 1.5-.8 2.5-.8 2 0 3 1.1 3 2.6 0 1.3-.7 2.1-2.2 2.6l-.8.3c-.7.3-1 .5-1 1 0 .5.5.8 1.2.8.8 0 1.4-.3 1.9-.7l.7 1.4c-.7.5-1.7.8-2.9.8z" fill="#000000"></path></svg>JavaScript</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18.2L12 22.5l7.4-2.3L21 2H3z" fill="#E34F26"></path><path d="M12 3.8v16.8l5.8-1.8 1.4-15H12z" fill="#EF652A"></path><path d="M12 7.7H7.7l.2 2.3h4.1V7.7zm0 4.6H9.7l.2 2.3h2.1v-2.3zm0 4.6l-2.6-.7-.2-1.8H7.3l.3 3.4L12 21.1v-4.2z" fill="#EBEBEB"></path><path d="M12 7.7v2.3h4.1l-.4 4.6-3.7 1v2.3l5.8-1.6.8-8.6H12z" fill="#FFFFFF"></path></svg>HTML5</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18.2L12 22.5l7.4-2.3L21 2H3z" fill="#1572B6"></path><path d="M12 3.8v16.8l5.8-1.8 1.4-15H12z" fill="#33A9DC"></path><path d="M12 7.7H7.7l.2 2.3h4.1V7.7zm0 4.6H7.9l.2 2.3h3.9v-2.3zm0 4.6l-2.6-.7-.2-1.8H7.3l.3 3.4L12 21.1v-4.2z" fill="#EBEBEB"></path><path d="M12 7.7v2.3h4.1l-.4 4.6-3.7 1v2.3l5.8-1.6.8-8.6H12z" fill="#FFFFFF"></path></svg>CSS3</span></div>
+</div>
+</div>
+<!-- Card 2: Databases & Cloud -->
+<div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+<!-- Precision Top Border Highlight -->
+<div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-500 transition-all duration-500"></div>
+<div>
+<!-- Icon Header with Ambient Halo -->
+<div class="relative w-12 h-12 mb-6">
+<div class="absolute inset-0 rounded-xl bg-amber-500/20 blur-md group-hover:blur-lg group-hover:bg-amber-500/30 transition-all"></div>
+<div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-inner group-hover:border-amber-500/60 transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+</svg>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Databases &amp; Cloud</h3>
+<p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-amber-400"></span>
+            Storage &amp; BaaS
+          </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 pt-1"><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M4.3 16.9l2.2-14c.1-.5.7-.7 1-.4l10.9 14.4c.4.5.1 1.2-.5 1.2H4.8c-.4 0-.6-.3-.5-.7z" fill="#FFA000"></path><path d="M3.9 17.5L8.5 7.1c.2-.5.9-.6 1.2-.1l8.8 11.2c.4.5 0 1.2-.6 1.2H4.4c-.4 0-.6-.5-.5-.9z" fill="#F57C00"></path><path d="M12.9 10.9l2.1-4.2c.3-.5 1-.5 1.2 0l4.3 12.1c.2.6-.3 1.2-.9 1.2H12l.9-9.1z" fill="#FFCA28"></path></svg>Firebase</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12.4 2C8.6 2 5.5 4.8 5.5 8.3c0 2.2 1.3 4.2 3.3 5.4v5.8c0 .8.6 1.5 1.5 1.5h4.1c.8 0 1.5-.7 1.5-1.5v-2.3c2.4-.7 4.1-2.9 4.1-5.6C20 7.8 16.6 2 12.4 2zm2.1 13.5v3.5h-4.1v-3.5c1.4.3 2.7.3 4.1 0zM12.4 4c2.8 0 5.4 3.9 5.4 7.6 0 2.4-1.6 4.4-3.7 4.8-1.1-.3-2.3-.3-3.4 0-2.1-.5-3.7-2.4-3.7-4.8 0-4 2.6-7.6 5.4-7.6z" fill="#336791"></path><circle cx="14.5" cy="7.5" r="1" fill="#336791"></circle><path d="M10.2 12c.5.8 1.3 1.3 2.2 1.3s1.7-.5 2.2-1.3" stroke="#336791" stroke-width="1.2" stroke-linecap="round"></path></svg>PostgreSQL</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M13.4 21.6c-.6.8-1.9.4-1.9-.6v-8.6h9.1c.9 0 1.4 1 .8 1.7l-8 7.5z" fill="#3ECF8E"></path><path d="M10.6 2.4c.6-.8 1.9-.4 1.9.6v8.6H3.4c-.9 0-1.4-1-.8-1.7l8-7.5z" fill="#249361"></path><path d="M12.5 11.4h-9.1c-.9 0-1.4-1-.8-1.7l8-7.5c.6-.8 1.9-.4 1.9.6v8.6z" fill="#3ECF8E"></path></svg>Supabase</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.5 3 2 4.3 2 6v12c0 1.7 4.5 3 10 3s10-1.3 10-3V6c0-1.7-4.5-3-10-3z" fill="#CC292B" opacity="0.2"></path><path d="M12 3c5.5 0 10 1.3 10 3s-4.5 3-10 3-10-1.3-10-3 4.5-3 10-3zm10 6.5c0 1.7-4.5 3-10 3s-10-1.3-10-3v3c0 1.7 4.5 3 10 3s10-1.3 10-3v-3zm0 6c0 1.7-4.5 3-10 3s-10-1.3-10-3v3c0 1.7 4.5 3 10 3s10-1.3 10-3v-3z" fill="#CC292B"></path></svg>MS SQL</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M18.8 8.4c-1-.7-2.3-.9-3.4-.6-1 .3-1.8.9-2.3 1.8-.4-.9-1.2-1.5-2.2-1.8-1.1-.3-2.4-.1-3.4.6-2.2 1.5-2.8 4.6-1.3 6.8.9 1.4 2.5 2.2 4.1 2.2.8 0 1.6-.2 2.3-.6l-.8-1.4c-.5.3-1 .4-1.5.4-1.1 0-2.2-.6-2.8-1.6-1-1.6-.6-3.7 1-4.7.7-.5 1.5-.6 2.3-.4.8.2 1.4.7 1.7 1.4h1.8c.3-.7.9-1.2 1.7-1.4.8-.2 1.6-.1 2.3.4 1.6 1 2 3.1 1 4.7-.6 1-1.7 1.6-2.8 1.6-.5 0-1-.1-1.5-.4l-.8 1.4c.7.4 1.5.6 2.3.6 1.6 0 3.2-.8 4.1-2.2 1.5-2.2.9-5.3-1.3-6.8z" fill="#00758F"></path><path d="M12 4c.6 1.1 1.6 1.9 2.8 2.2l-.4 1.5c-1.6-.4-2.9-1.5-3.7-2.9L12 4z" fill="#F29111"></path></svg>MySQL</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#A4373A"></rect><path d="M12 6.5l4 11h-2.1l-.8-2.6H10.9L10.1 17.5H8l4-11zm.6 6.8l-1.1-3.6-1.1 3.6h2.2z" fill="#FFFFFF"></path></svg>MS Access</span></div>
+</div>
+</div>
+<!-- Card 3: Tools & Environments -->
+<div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+<!-- Precision Top Border Highlight -->
+<div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-neutral-400/30 to-transparent group-hover:via-crimson-500/60 transition-all duration-500"></div>
+<div>
+<!-- Icon Header with Ambient Halo -->
+<div class="relative w-12 h-12 mb-6">
+<div class="absolute inset-0 rounded-xl bg-neutral-400/10 blur-md group-hover:blur-lg group-hover:bg-crimson-500/20 transition-all"></div>
+<div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-white/15 flex items-center justify-center text-neutral-200 shadow-inner group-hover:border-crimson-500/50 group-hover:text-crimson-400 transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+</svg>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Tools &amp; Environments</h3>
+<p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-neutral-400"></span>
+            Dev Tooling
+          </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 pt-1"><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M21.6 10.9l-8.5-8.5c-.8-.8-2.1-.8-2.8 0L8.4 4.3l3.6 3.6c.6-.2 1.4-.1 1.9.4.5.5.7 1.3.4 1.9l3.5 3.5c.6-.3 1.4-.1 1.9.4.8.8.8 2.1 0 2.8-.8.8-2.1.8-2.8 0-.6-.6-.7-1.5-.3-2.2L13.3 11v5.1c.2.2.3.4.3.7 0 .8-.5 1.5-1.3 1.8-.8.3-1.7 0-2.1-.8-.4-.7-.2-1.7.5-2.2.2-.1.5-.2.8-.2V10c-.3 0-.6-.1-.8-.3-.6-.6-.7-1.5-.3-2.2L6.8 4 2.4 8.4c-.8.8-.8 2.1 0 2.8l8.5 8.5c.8.8 2.1.8 2.8 0l7.9-7.9c.8-.8.8-2 0-2.8z" fill="#F05032"></path></svg>Git</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>GitHub</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M6.8 8.9L5.3 6.3c-.2-.4 0-.9.4-1.1.4-.2.9 0 1.1.4l1.6 2.8c1.1-.5 2.4-.8 3.7-.8s2.6.3 3.7.8l1.6-2.8c.2-.4.7-.6 1.1-.4.4.2.6.7.4 1.1l-1.5 2.6c2.3 1.3 3.9 3.5 4.3 6.2H3.7c.4-2.6 2-4.9 4.3-6.1zM8.5 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#3DDC84"></path><rect x="3.7" y="16.5" width="16.6" height="3.5" rx="1.5" fill="#3DDC84"></rect></svg>Android Studio</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M17.4 2.1l4.4 2.1c.7.3 1.2 1 1.2 1.8v12c0 .8-.5 1.5-1.2 1.8l-4.4 2.1c-.6.3-1.4.1-1.8-.4l-9.2-8.3 9-8.7c.5-.5 1.3-.7 2-.4z" fill="#007ACC"></path><path d="M17.4 2.1L6.4 12.6l-3.8-3c-.6-.5-.6-1.4 0-1.9l2.8-2.2c.5-.4 1.2-.4 1.7 0l10.3-3.4z" fill="#1F9CF0"></path><path d="M2.6 16.3l3.8-3 11 10.6-10.3-3.4c-.5.4-1.2.4-1.7 0l-2.8-2.3c-.6-.5-.6-1.4 0-1.9z" fill="#0065A9"></path><path d="M16.5 12l-10.1 7.2L2.6 16.3c-.6-.5-.6-1.4 0-1.9L6.4 12 2.6 9.6c-.6-.5-.6-1.4 0-1.9l3.8-2.9L16.5 12z" fill="#007ACC" opacity="0.6"></path></svg>VS Code</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M17.3 2.3l4.5 3.3c.7.5 1.2 1.3 1.2 2.2v8.4c0 .9-.5 1.7-1.2 2.2l-4.5 3.3c-.7.5-1.7.5-2.4-.1l-9-7.6 9-7.6c.7-.6 1.7-.6 2.4-.1z" fill="#5C2D91"></path><path d="M17.3 2.3L6.8 12.2l-4.4-3.5c-.6-.5-.6-1.4 0-1.9l2.3-1.8c.6-.5 1.4-.5 2 0l10.6-2.7z" fill="#8549BA"></path><path d="M2.4 17.2l4.4-3.5 10.5 9.9-10.6-2.7c-.6.5-1.4.5-2 0l-2.3-1.8c-.6-.5-.6-1.4 0-1.9z" fill="#47226F"></path></svg>Visual Studio</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 rounded-[2px]" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="3" fill="#21D789"></rect><path d="M2 2h9v9H2V2z" fill="#000"></path><path d="M13 13h9v9h-9v-9z" fill="#FC801D"></path><path d="M2 13h9v9H2v-9z" fill="#21D789"></path><rect x="2" y="2" width="20" height="20" rx="2" fill="#1B1B1B"></rect><path d="M5.5 17h5v1.2h-5V17z" fill="#21D789"></path><path d="M5.5 6.5h3.4c1.4 0 2.3.9 2.3 2.1 0 1.3-.9 2.1-2.3 2.1H7V13H5.5V6.5zm1.5 3h1.8c.6 0 1-.4 1-.9 0-.6-.4-.9-1-.9H7v1.8zM12.4 9.8c0-2.1 1.5-3.5 3.6-3.5 1.3 0 2.3.5 2.9 1.3l-1.1 1c-.4-.5-1-.8-1.7-.8-1.2 0-2.1.9-2.1 2s.9 2.1 2.1 2.1c.8 0 1.4-.4 1.8-.9l1.1.9c-.7.9-1.7 1.4-3 1.4-2.1-.1-3.6-1.4-3.6-3.5z" fill="#FFF"></path></svg>PyCharm</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12 6.5c-3.1 0-5.6 2.5-5.6 5.5s2.5 5.5 5.6 5.5 5.6-2.5 5.6-5.5-2.5-5.5-5.6-5.5zm0 9c-2 0-3.6-1.6-3.6-3.5s1.6-3.5 3.6-3.5 3.6 1.6 3.6 3.5-1.6 3.5-3.6 3.5z" fill="#F9AB00"></path><path d="M7 12c0-2.8-2.2-5-5-5S-.2 9.2 0 12c.2 2.8 2.4 5 5.2 5s4.8-2.2 4.8-5zm-5 3c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z" fill="#E37400" transform="translate(5, 0)"></path></svg>Google Colab</span></div>
+</div>
+</div>
+<!-- Card 4: Productivity Systems -->
+<div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+<!-- Precision Top Border Highlight -->
+<div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent group-hover:via-crimson-500 transition-all duration-500"></div>
+<div>
+<!-- Icon Header with Ambient Halo -->
+<div class="relative w-12 h-12 mb-6">
+<div class="absolute inset-0 rounded-xl bg-crimson-500/20 blur-md group-hover:blur-lg group-hover:bg-crimson-500/30 transition-all"></div>
+<div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-crimson-500/30 flex items-center justify-center text-crimson-400 shadow-inner group-hover:border-crimson-500/60 transition-colors">
+<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="18" rx="2" width="18" x="3" y="3"></rect>
+<path d="M3 9h18"></path>
+<path d="M9 21V9"></path>
+</svg>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Productivity Systems</h3>
+<p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-crimson-400"></span>
+            Content &amp; Operations
+          </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 pt-1"><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#21759B"></circle><path d="M3.5 12c0 3.8 2.5 7.1 6 8.2L5.4 8.7C4.2 9.6 3.5 10.7 3.5 12zm13.1-.6c0-.9-.3-1.6-.6-2.2-.5-.8-1-1.4-1-2.2 0-.9.7-1.7 1.7-1.7.1 0 .2 0 .3.1C15.6 4.3 13.9 3.8 12 3.8c-2.7 0-5.1 1.1-6.7 2.9l4.5 12.3 3.4-10.2c.2-.5.3-.9.3-1.2.2 2 .7 3.4 1.1 4.5l2 5.9c2-1.5 3.4-3.8 3.4-6.5 0-.8-.1-1.6-.4-2.3l-3.1 2.2zM12 20.3c.6 0 1.2-.1 1.8-.2l-2.9-8.4-3 8.3c1.3.2 2.7.3 4.1.3z" fill="#FFFFFF"></path></svg>WordPress</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="9.5" height="9.5" rx="1" fill="#F25022"></rect><rect x="12.5" y="2" width="9.5" height="9.5" rx="1" fill="#7FBA00"></rect><rect x="2" y="12.5" width="9.5" height="9.5" rx="1" fill="#00A4EF"></rect><rect x="12.5" y="12.5" width="9.5" height="9.5" rx="1" fill="#FFB900"></rect></svg>Microsoft 365 Suite</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#185ABD"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#41A5EE"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#103F91"></rect><path d="M6.2 14.5l1-5h1.2l.9 3.4.9-3.4h1.2l1 5h-1.2l-.6-3.4-.9 3.4H8.8l-.9-3.4-.6 3.4H6.2z" fill="#FFFFFF"></path></svg>Word</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#C43E1C"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#ED6C47"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#98240D"></rect><path d="M7 14.5V9.5h2.6c1.2 0 2 .7 2 1.8 0 1.1-.8 1.8-2 1.8H8.3v1.4H7zm1.3-2.5h1.2c.5 0 .9-.3.9-.7 0-.5-.4-.7-.9-.7H8.3v1.4z" fill="#FFFFFF"></path></svg>PowerPoint</span><span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#107C41"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#33C481"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#074723"></rect><path d="M6.5 14.5l1.8-2.6-1.6-2.4h1.5l1 1.6 1-1.6h1.5l-1.7 2.4 1.8 2.6H10.3l-1.1-1.8-1.2 1.8H6.5z" fill="#FFFFFF"></path></svg>Excel Analysis</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+
+
+</body></html>

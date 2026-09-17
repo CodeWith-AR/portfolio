@@ -1,0 +1,440 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style="width: 1280px; height: 4121px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Abdur Rehman — Engineered Projects Showcase</title>
+<!-- Google Fonts: Syne, Outfit, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@300;400;500;600;700;800&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#070709',
+              900: '#0e0e11',
+              850: '#131316',
+              800: '#1c1b1e',
+              750: '#201f22',
+              700: '#2a2a2d',
+            },
+            crimson: {
+              400: '#ff4d5a',
+              500: '#e50914',
+              600: '#b80710',
+              700: '#8b050c',
+            },
+            amberAccent: '#eab308',
+            goldAccent: '#f59e0b',
+          }
+        }
+      }
+    }
+</script>
+<!-- Custom Mockup & Ambient Styling -->
+<style data-purpose="cybernetic-styles">
+    /* Subtle organic contour lines background inspired by DATA:IMAGE:IMAGE_2 */
+    .contour-ambient-bg {
+      background-color: #08080b;
+      background-image: 
+        radial-gradient(circle at 18% 22%, rgba(229, 9, 20, 0.08) 0%, transparent 48%),
+        radial-gradient(circle at 82% 70%, rgba(234, 179, 8, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(20, 20, 30, 0.5) 0%, transparent 80%),
+        repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 40px);
+    }
+
+    .glass-card {
+      background: rgba(19, 19, 22, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .glass-pill {
+      background: rgba(22, 22, 27, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-pill:hover {
+      background: rgba(32, 31, 38, 0.95);
+      border-color: rgba(234, 179, 8, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* Device Mockup Realistic Chassis */
+    .laptop-frame {
+      box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(229, 9, 20, 0.12);
+    }
+    
+    .laptop-base-chassis {
+      background: linear-gradient(180deg, #3d3d44 0%, #202025 50%, #151518 100%);
+      box-shadow: 0 16px 30px -4px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .laptop-base-lip {
+      background: linear-gradient(180deg, #1b1b1e 0%, #0c0c0e 100%);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    }
+
+    .phone-frame {
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.95), 0 0 30px rgba(234, 179, 8, 0.15), inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+    }
+
+    .phone-speaker-island {
+      background: #000;
+      border-radius: 20px;
+    }
+</style>
+</head>
+<body class="contour-ambient-bg text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-crimson-500 selection:text-white">
+<!-- BEGIN: CategorizedProjectsSection -->
+<section class="relative py-20 lg:py-28 min-h-screen">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+<!-- Top Header & Category Filter Bar -->
+
+<!-- ============================================================== -->
+<!-- FLAGSHIP SHOWCASE: DUO DEVICE EDITORIAL VIEW (IMAGE_2 INSPIRED) -->
+<!-- ============================================================== -->
+<div class="space-y-32 mb-32" id="flagship-showcase">
+<!-- FLAGSHIP 1: THERAPY NEST (Web App + Mobile Application) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Mockup Duo Stage (Left) -->
+<div class="lg:col-span-7 relative order-2 lg:order-1 flex items-center justify-center pt-8 pb-10">
+<!-- Ambient Glow Orb -->
+<div class="absolute -top-10 -left-10 w-96 h-96 bg-crimson-500/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 right-0 w-80 h-80 bg-amberAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Realistic Laptop Mockup (Therapy Nest Web App) -->
+<div class="relative w-full max-w-[540px] z-10">
+<!-- Screen Lid -->
+<div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative">
+<!-- Web Cam / Sensor -->
+<div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3a3a44] rounded-full ring-1 ring-black"></div>
+<!-- Laptop Display Screen Content -->
+<div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col">
+<!-- Browser Bar -->
+<div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+</div>
+<div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5">
+<span class="text-emerald-400">https://</span>therapy-nest-web.vercel.app
+                  </div>
+<div class="w-8 flex justify-end">
+<span class="text-[9px] text-neutral-500 font-mono">VERCEL</span>
+</div>
+</div>
+<!-- Web App In-Screen UI -->
+<div class="p-4 flex-1 flex flex-col justify-between bg-gradient-to-br from-[#10131d] via-[#090b10] to-[#150a0d] text-white">
+<div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded bg-crimson-500 flex items-center justify-center font-bold text-[10px] text-white">TN</div>
+<span class="font-display font-bold text-xs tracking-wide">THERAPY NEST <span class="text-crimson-400 text-[10px] font-mono">// ASR WEB</span></span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[8px] font-mono border border-emerald-500/30">ONLINE &amp; LOCAL ASR</span>
+</div>
+<!-- Banner / Hero graphic similar to FLOODS IN PAKISTAN in image -->
+<div class="my-2 p-3 rounded-lg bg-gradient-to-r from-crimson-900/60 to-obsidian-900 border border-crimson-500/30 flex items-center justify-between">
+<div>
+<span class="text-[9px] font-mono text-amberAccent uppercase tracking-wider block">Adaptive 2PL IRT Engine</span>
+<h5 class="text-sm sm:text-base font-display font-extrabold uppercase text-white tracking-wider leading-tight">SPEECH &amp; COGNITIVE <span class="text-crimson-400">THERAPY</span></h5>
+<p class="text-[9px] text-neutral-300 font-light mt-0.5">On-device Vosk speech recognition with Jaro-Winkler analysis</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-crimson-500/20 border border-crimson-500 flex items-center justify-center text-crimson-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23"></line></svg>
+</div>
+</div>
+<!-- Exercise Stats Mini Grid -->
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-white/5 p-1.5 rounded border border-white/5">
+<div class="text-[8px] text-neutral-400">Phoneme Match</div>
+<div class="text-[11px] font-bold text-amberAccent font-mono">94.8%</div>
+</div>
+<div class="bg-white/5 p-1.5 rounded border border-white/5">
+<div class="text-[8px] text-neutral-400">IRT Difficulty (θ)</div>
+<div class="text-[11px] font-bold text-crimson-400 font-mono">+1.42</div>
+</div>
+<div class="bg-white/5 p-1.5 rounded border border-white/5">
+<div class="text-[8px] text-neutral-400">Latency</div>
+<div class="text-[11px] font-bold text-emerald-400 font-mono">18ms (Offline)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Laptop Chassis Base -->
+<div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center">
+<div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div>
+</div>
+</div>
+<!-- Overlapping Realistic Mobile Mockup (Therapy Nest Flutter App) -->
+<div class="absolute -right-2 sm:right-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[-2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300">
+<!-- Dynamic Island / Speaker -->
+<div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col">
+<div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3.5 phone-speaker-island flex items-center justify-between px-2 z-30">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1c1c22]"></div>
+<div class="w-2 h-2 rounded-full bg-blue-950/80 ring-1 ring-white/10"></div>
+</div>
+<!-- Mobile Screen View -->
+<div class="pt-6 px-2.5 pb-2.5 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#111319] to-[#08080a] text-white">
+<div>
+<div class="flex items-center justify-between text-[8px] text-neutral-400 font-mono mb-2">
+<span class="">9:41</span>
+<span class="text-crimson-400">FLUTTER</span>
+</div>
+<div class="text-[10px] font-bold font-display text-white">Therapy Nest</div>
+<p class="text-[7.5px] text-amberAccent">Speech &amp; Cognitive Platform</p>
+<div class="mt-2.5 p-2 rounded-lg bg-crimson-950/40 border border-crimson-500/30 text-center">
+<span class="text-[7.5px] text-neutral-300 font-mono">Vosk ASR Stream</span>
+<div class="text-[9px] font-bold text-white mt-0.5">"Articulation Practice"</div>
+<div class="w-full bg-black/60 rounded-full h-1 mt-1.5 overflow-hidden">
+<div class="bg-crimson-500 h-full w-4/5"></div>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="bg-white/5 p-1 rounded text-[7.5px] text-neutral-300 flex justify-between">
+<span class="">Sqflite Local</span>
+<span class="text-emerald-400">• Sync Ready</span>
+</div>
+<div class="bg-crimson-500 text-white rounded-md py-1 text-center text-[8px] font-bold">
+                    Start Session
+                  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rich Metadata & Tech Badges (Right - Exactly matching layout style of IMAGE_2) -->
+<div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
+<div>
+<span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">
+              Therapy Nest
+            </span>
+<h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Speech &amp; Cognitive Therapy Platform — Web &amp; Mobile Ecosystem
+            </h3>
+</div>
+<p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+            Therapy Nest required an offline-first clinical rehabilitation architecture capable of delivering accurate on-device speech recognition, cognitive exercises, and mathematical IRT psychometric difficulty modeling with zero cloud latency. Developed both a Vercel-hosted offline-ready web application and a Flutter cross-platform companion with SQLite and FastAPI synchronization.
+          </p>
+<!-- Technology Stack Label & Pills (Identical to IMAGE_2 bottom badge layout) -->
+<div>
+<div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">
+              TECHNOLOGY STACK
+            </div>
+<div class="flex flex-wrap gap-2">
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-crimson-400">•</span> HTML5 / CSS3 / JS
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-blue-400">•</span> Flutter &amp; Dart
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-amberAccent">•</span> Vosk ASR
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-purple-400">•</span> 2PL IRT Algorithm
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-emerald-400">•</span> SQLite / Drift
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-crimson-400">•</span> FastAPI &amp; Render
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-neutral-300">•</span> Supabase
+              </span>
+</div>
+</div>
+<!-- Dual Links -->
+<div class="flex flex-wrap items-center gap-3 pt-3">
+<a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://therapy-nest-web.vercel.app" rel="noopener noreferrer" target="_blank">
+              Launch Live App
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+</a>
+<a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+              GitHub Repository
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- FLAGSHIP 2: CONVERTERNEST (Desktop Web + Mobile On-Device Engine) [Flipped Layout as requested] -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Rich Metadata & Tech Badges (Left) -->
+<div class="lg:col-span-5 space-y-5">
+<div>
+<span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">
+              ConverterNest
+            </span>
+<h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              High-Velocity Media &amp; File Engine — Unified Desktop &amp; Mobile
+            </h3>
+</div>
+<p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+            ConverterNest was engineered to provide instant, privacy-focused file conversion across audio, video, document, and image extensions without transmitting user data to third-party servers. Features an optimized on-device FFmpeg compilation inside Flutter paired with a lightning-fast Web API converter portal.
+          </p>
+<!-- Technology Stack Label & Pills -->
+<div>
+<div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">
+              TECHNOLOGY STACK
+            </div>
+<div class="flex flex-wrap gap-2">
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-blue-400">•</span> Flutter &amp; Dart
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-amberAccent">•</span> FFmpeg Core
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-purple-400">•</span> Hive Local DB
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-crimson-400">•</span> MVVM Architecture
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-emerald-400">•</span> Web APIs &amp; JS
+              </span>
+<span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5">
+<span class="text-neutral-300">•</span> Vercel Deploy
+              </span>
+</div>
+</div>
+<!-- Dual Links -->
+<div class="flex flex-wrap items-center gap-3 pt-3">
+<a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://converter-nest-web.vercel.app/" rel="noopener noreferrer" target="_blank">
+              Launch App
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+</a>
+<a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR/ConverterNest" rel="noopener noreferrer" target="_blank">
+              View Repository
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+</a>
+</div>
+</div>
+<!-- Mockup Duo Stage (Right) -->
+<div class="lg:col-span-7 relative flex items-center justify-center pt-8 pb-10">
+<!-- Ambient Glow Orb -->
+<div class="absolute -top-10 -right-10 w-96 h-96 bg-amberAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 left-0 w-80 h-80 bg-crimson-500/15 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Realistic Laptop Mockup (ConverterNest Web) -->
+<div class="relative w-full max-w-[540px] z-10">
+<!-- Screen Lid -->
+<div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative">
+<div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3a3a44] rounded-full ring-1 ring-black"></div>
+<!-- Display Screen Content -->
+<div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col">
+<div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+</div>
+<div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5">
+<span class="text-emerald-400">https://</span>converter-nest-web.vercel.app
+                  </div>
+<span class="text-[9px] text-neutral-500 font-mono">UTILITY</span>
+</div>
+<!-- Web Conversion Screen UI -->
+<div class="p-4 flex-1 flex flex-col justify-between bg-gradient-to-br from-[#0e121a] via-[#090b10] to-[#12080a] text-white">
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded bg-amberAccent/20 border border-amberAccent flex items-center justify-center font-bold text-[10px] text-amberAccent">CN</div>
+<span class="font-display font-bold text-xs tracking-wide">CONVERTERNEST <span class="text-neutral-400 text-[10px] font-mono">// WEB DASHBOARD</span></span>
+</div>
+<span class="px-2 py-0.5 rounded bg-white/10 text-[8px] font-mono text-neutral-300">MULTI-FORMAT</span>
+</div>
+<!-- Drop Zone Graphic -->
+<div class="my-2 border border-dashed border-crimson-500/50 bg-crimson-500/5 rounded-xl p-4 text-center">
+<svg class="w-7 h-7 mx-auto text-crimson-400 mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 16a4 4 0 0 1-.88-7.903A5 5 0 1 1 15.9 6L16 6a5 5 0 0 1 1 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+<div class="text-xs font-bold text-white">Drag &amp; Drop Media Files for Local Conversion</div>
+<div class="text-[9px] text-neutral-400 mt-0.5">MP4, MKV, WAV, MP3, PDF, WEBP &amp; PNG</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-white/5 text-[9px] font-mono">
+<span class="text-neutral-400">Engine: Web Assembly + Client Pipe</span>
+<span class="text-emerald-400">100% Privacy Preserved</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Laptop Chassis Base -->
+<div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center">
+<div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div>
+</div>
+</div>
+<!-- Overlapping Realistic Mobile Mockup (ConverterNest Flutter App) -->
+<div class="absolute -left-2 sm:left-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300">
+<div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col">
+<div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3.5 phone-speaker-island flex items-center justify-between px-2 z-30">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1c1c22]"></div>
+<div class="w-2 h-2 rounded-full bg-blue-950/80 ring-1 ring-white/10"></div>
+</div>
+<!-- Mobile View -->
+<div class="pt-6 px-2.5 pb-2.5 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#16131d] to-[#08080a] text-white">
+<div>
+<div class="flex items-center justify-between text-[8px] text-neutral-400 font-mono mb-2">
+<span class="">10:24</span>
+<span class="text-amberAccent">FFMPEG</span>
+</div>
+<div class="text-[10px] font-bold font-display text-white">ConverterNest</div>
+<p class="text-[7.5px] text-neutral-400 font-mono">On-Device Transcoder</p>
+<div class="mt-2 space-y-1.5">
+<div class="p-1.5 rounded bg-white/5 border border-white/10 flex items-center justify-between text-[8px]">
+<span class="">video_sample.mov</span>
+<span class="text-crimson-400 font-bold">→ mp4</span>
+</div>
+<div class="p-1.5 rounded bg-white/5 border border-white/10 flex items-center justify-between text-[8px]">
+<span class="">speech_rec.wav</span>
+<span class="text-emerald-400 font-bold">→ mp3</span>
+</div>
+</div>
+</div>
+<div>
+<div class="text-[7px] text-neutral-400 font-mono text-center mb-1">Status: Ready (Hive DB Cache)</div>
+<div class="bg-amberAccent text-black rounded-md py-1 text-center text-[8px] font-bold">
+                    Transcode Queue
+                  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center"><div class="lg:col-span-7 relative order-2 lg:order-1 flex items-center justify-center pt-8 pb-10"><div class="absolute -top-10 -left-10 w-96 h-96 bg-crimson-500/15 rounded-full blur-3xl pointer-events-none"></div><div class="absolute -bottom-8 right-0 w-80 h-80 bg-amberAccent/10 rounded-full blur-3xl pointer-events-none"></div><div class="relative w-full max-w-[540px] z-10"><div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative"><div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3a3a44] rounded-full ring-1 ring-black"></div><div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col"><div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div><div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5"><span class="text-emerald-400">https://</span>codewith-ar.github.io/capital-journeys</div><div class="w-8 flex justify-end"><span class="text-[9px] text-neutral-500 font-mono">EXPEDITION</span></div></div><div class="p-4 flex-1 flex flex-col justify-between bg-gradient-to-br from-[#10131d] via-[#090b10] to-[#150a0d] text-white"><div class="flex items-center justify-between border-b border-white/10 pb-2.5"><div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-crimson-500 flex items-center justify-center font-bold text-[10px] text-white">CJ</div><span class="font-display font-bold text-xs tracking-wide">CAPITAL JOURNEYS <span class="text-crimson-400 text-[10px] font-mono">// DISCOVER</span></span></div><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[8px] font-mono border border-emerald-500/30">API ACTIVE &amp; LIVE</span></div><div class="my-2 p-3 rounded-lg bg-gradient-to-r from-crimson-900/60 to-obsidian-900 border border-crimson-500/30 flex items-center justify-between"><div><span class="text-[9px] font-mono text-amberAccent uppercase tracking-wider block">UNVEIL NORTHERN TERRAINS</span><h5 class="text-sm sm:text-base font-display font-extrabold uppercase text-white tracking-wider leading-tight">CURATED EXPERIENCES <span class="text-crimson-400">PREMIER TRAVEL</span></h5><p class="text-[9px] text-neutral-300 font-light mt-0.5">Hunza Valley, Skardu Lakes &amp; Karakoram Ridge Routes</p></div><div class="w-10 h-10 rounded-full bg-crimson-500/20 border border-crimson-500 flex items-center justify-center text-crimson-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" x2="8" y1="2" y2="18"></line><line x1="16" x2="16" y1="6" y2="22"></line></svg></div></div><div class="grid grid-cols-3 gap-2"><div class="bg-white/5 p-1.5 rounded border border-white/5"><div class="text-[8px] text-neutral-400">Curated Cities</div><div class="text-[11px] font-bold text-amberAccent font-mono">142+ Cities</div></div><div class="bg-white/5 p-1.5 rounded border border-white/5"><div class="text-[8px] text-neutral-400">Global Rating</div><div class="text-[11px] font-bold text-crimson-400 font-mono">4.96 / 5.0</div></div><div class="bg-white/5 p-1.5 rounded border border-white/5"><div class="text-[8px] text-neutral-400">Routing Engine</div><div class="text-[11px] font-bold text-emerald-400 font-mono">Dynamic Geo</div></div></div></div></div></div><div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center"><div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div></div></div><div class="absolute -right-2 sm:right-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[-2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300"><div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col"><div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3.5 phone-speaker-island flex items-center justify-between px-2 z-30"><div class="w-1.5 h-1.5 rounded-full bg-[#1c1c22]"></div><div class="w-2 h-2 rounded-full bg-blue-950/80 ring-1 ring-white/10"></div></div><div class="pt-6 px-2.5 pb-2.5 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#111319] to-[#08080a] text-white"><div><div class="flex items-center justify-between text-[8px] text-neutral-400 font-mono mb-2"><span class="">9:41</span><span class="text-amberAccent">TRAVEL</span></div><div class="text-[10px] font-bold font-display text-white">Capital Pass</div><p class="text-[7.5px] text-amberAccent">Digital Boarding Suite</p><div class="mt-2.5 p-2 rounded-lg bg-crimson-950/40 border border-crimson-500/30 text-center"><span class="text-[7.5px] text-neutral-300 font-mono">Next Destination</span><div class="text-[9px] font-bold text-white mt-0.5">Karakoram Express</div><div class="w-full bg-black/60 rounded-full h-1 mt-1.5 overflow-hidden"><div class="bg-amberAccent h-full w-4/5"></div></div></div></div><div class="space-y-1"><div class="bg-white/5 p-1 rounded text-[7.5px] text-neutral-300 flex justify-between"><span class="">Geo-Tracking</span><span class="text-emerald-400">• Live Cached</span></div><div class="bg-crimson-500 text-white rounded-md py-1 text-center text-[8px] font-bold">Explore Tours</div></div></div></div></div></div><div class="lg:col-span-5 order-1 lg:order-2 space-y-5"><div><span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">Capital Journeys</span><h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">Responsive Travel &amp; High-Velocity Tourism Platform — Unified Web &amp; Mobile</h3></div><p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">Responsive travel and tourism website featuring destination exploration, immersive travel information, and dynamic tour packages with fluid viewport grid routing and interactive destination booking analytics.</p><div><div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">TECHNOLOGY STACK</div><div class="flex flex-wrap gap-2"><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-crimson-400">•</span> Next.js / React</span><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-blue-400">•</span> TailwindCSS</span><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-amberAccent">•</span> Mapbox GL</span><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-purple-400">•</span> Node API</span><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-emerald-400">•</span> Supabase</span><span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200 flex items-center gap-1.5"><span class="text-neutral-300">•</span> Vercel Deploy</span></div></div><div class="flex flex-wrap items-center gap-3 pt-3"><a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://codewith-ar.github.io/capital-journeys-website/" rel="noopener noreferrer" target="_blank">Explore Tour<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a><a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR/capital-journeys-website" rel="noopener noreferrer" target="_blank">GitHub Repository<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div></div></div>
+</div>
+<!-- ============================================================== -->
+<!-- CATEGORIZED PRODUCTION PORTFOLIO GRIDS (MATCHING SOURCE REPO) -->
+<!-- ============================================================== -->
+<!-- Category 1: Web Development -->
+
+<!-- Category 2: Mobile Applications -->
+
+<!-- Category 3: AI & Machine Learning -->
+
+</div>
+</section>
+<!-- END: CategorizedProjectsSection -->
+
+
+
+
+
+
+
+
+
+
+</body></html>

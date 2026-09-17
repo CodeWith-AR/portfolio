@@ -1,0 +1,469 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Abdur Rehman — Obsidian Cybernetic Systems Portfolio</title>
+<!-- Google Fonts: Syne, Outfit, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#070709',
+              900: '#0e0e11',
+              850: '#131316',
+              800: '#1c1b1e',
+              750: '#201f22',
+              700: '#2a2a2d',
+            },
+            crimson: {
+              400: '#ff4d5a',
+              500: '#e50914',
+              600: '#b80710',
+              700: '#8b050c',
+            },
+            amberAccent: '#eab308',
+          },
+          animation: {
+            'breathing': 'breathingGlow 3.5s ease-in-out infinite',
+            'breathing-slow': 'breathingGlow 4.5s ease-in-out infinite 0.7s',
+            'breathing-delayed': 'breathingGlow 4s ease-in-out infinite 1.4s',
+          },
+          keyframes: {
+            breathingGlow: {
+              '0%, 100%': {
+                borderColor: 'rgba(234, 179, 8, 0.3)',
+                boxShadow: '0 0 14px rgba(234, 179, 8, 0.12), inset 0 0 8px rgba(234, 179, 8, 0.05)',
+                transform: 'translateY(0px)'
+              },
+              '50%': {
+                borderColor: 'rgba(234, 179, 8, 0.85)',
+                boxShadow: '0 0 26px rgba(234, 179, 8, 0.32), inset 0 0 12px rgba(234, 179, 8, 0.15)',
+                transform: 'translateY(-3px)'
+              },
+            }
+          }
+        }
+      }
+    }
+</script>
+<!-- Custom Styles: Glassmorphism, 3D Rotator & Coverflow Effects -->
+<style data-purpose="cybernetic-styles">
+    .glass-nav {
+      background: rgba(19, 19, 22, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+    }
+
+    .glass-card {
+      background: rgba(19, 19, 22, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-pill {
+      background: rgba(14, 14, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(234, 179, 8, 0.45);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-pill:hover {
+      background: rgba(26, 26, 32, 0.95);
+      border-color: rgba(234, 179, 8, 1);
+      box-shadow: 0 0 30px rgba(234, 179, 8, 0.45), inset 0 0 15px rgba(234, 179, 8, 0.2);
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .text-glow-crimson {
+      text-shadow: 0 0 24px rgba(229, 9, 20, 0.7), 0 0 50px rgba(229, 9, 20, 0.35);
+    }
+
+    .btn-glow-crimson {
+      box-shadow: 0 0 25px rgba(229, 9, 20, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-glow-crimson:hover {
+      box-shadow: 0 0 35px rgba(229, 9, 20, 0.75), 0 0 10px rgba(255, 77, 90, 0.9);
+      transform: translateY(-2px);
+    }
+
+    /* 3D Perspective Containers */
+    .perspective-container {
+      perspective: 1200px;
+    }
+
+    /* Domain Rotator 3D Card States */
+    .rotator-card {
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .rotator-card.active {
+      transform: translate3d(0, 0, 60px) scale(1.04);
+      border-color: rgba(229, 9, 20, 0.85);
+      box-shadow: 0 0 40px rgba(229, 9, 20, 0.4), inset 0 0 20px rgba(229, 9, 20, 0.15);
+      opacity: 1;
+      z-index: 20;
+    }
+    .rotator-card.prev {
+      transform: translate3d(-35%, 0, -50px) rotateY(24deg) scale(0.88);
+      opacity: 0.45;
+      z-index: 10;
+    }
+    .rotator-card.next {
+      transform: translate3d(35%, 0, -50px) rotateY(-24deg) scale(0.88);
+      opacity: 0.45;
+      z-index: 10;
+    }
+    .rotator-card.hidden-card {
+      transform: translate3d(0, 0, -120px) scale(0.7);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Certifications 3D Coverflow States */
+    .cert-slide {
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .cert-slide.active {
+      transform: translate3d(0, 0, 80px) scale(1.05);
+      opacity: 1;
+      z-index: 30;
+      border-color: rgba(229, 9, 20, 0.6);
+      box-shadow: 0 25px 60px -15px rgba(229, 9, 20, 0.35), 0 0 30px rgba(229, 9, 20, 0.2);
+    }
+    .cert-slide.prev-1 {
+      transform: translate3d(-48%, 0, -40px) rotateY(30deg) scale(0.86);
+      opacity: 0.5;
+      z-index: 20;
+    }
+    .cert-slide.next-1 {
+      transform: translate3d(48%, 0, -40px) rotateY(-30deg) scale(0.86);
+      opacity: 0.5;
+      z-index: 20;
+    }
+    .cert-slide.prev-2 {
+      transform: translate3d(-80%, 0, -100px) rotateY(45deg) scale(0.72);
+      opacity: 0.25;
+      z-index: 10;
+    }
+    .cert-slide.next-2 {
+      transform: translate3d(80%, 0, -100px) rotateY(-45deg) scale(0.72);
+      opacity: 0.25;
+      z-index: 10;
+    }
+    .cert-slide.hidden-cert {
+      transform: translate3d(0, 0, -160px) scale(0.6);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+</style>
+</head>
+<body class="bg-obsidian-950 text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-crimson-500 selection:text-white">
+<!-- BEGIN: FloatingNavbar -->
+<!-- END: FloatingNavbar -->
+<!-- BEGIN: HeroSection -->
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<!-- END: AboutSection -->
+<!-- BEGIN: DomainRotatorSection (Referenced from DATA:IMAGE:IMAGE_3) -->
+<!-- END: DomainRotatorSection -->
+<!-- BEGIN: SkillsSection -->
+<!-- END: SkillsSection -->
+<!-- BEGIN: CategorizedProjectsSection -->
+<!-- END: CategorizedProjectsSection -->
+<!-- BEGIN: CertificationsCarouselSection (Faithfully Implementing DATA:IMAGE:IMAGE_2 Coverflow) -->
+<section class="relative py-28 bg-obsidian-950 border-t border-white/5 overflow-hidden min-h-screen flex flex-col justify-center items-center" id="certifications">
+<!-- Soft Crimson Radial Background Glow as seen in IMAGE_2 -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-crimson-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+<div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+<!-- Header with Ribbon Badge Icon matching IMAGE_2 -->
+<div class="flex items-center justify-center gap-3 mb-2">
+<div class="w-7 h-7 rounded-full bg-crimson-500/20 flex items-center justify-center text-crimson-500">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<circle cx="12" cy="9" fill="none" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+<circle cx="12" cy="9" fill="currentColor" r="3"></circle>
+<path d="M8.5 14.5L7 22l5-2 5 2-1.5-7.5" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<h2 class="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white">
+        Certifications &amp; Honours
+      </h2>
+</div>
+<p class="text-neutral-400 text-xs sm:text-sm mb-12">Accredited technical qualifications &amp; academic recognitions</p>
+<!-- 3D Coverflow Perspective Viewport -->
+<div class="perspective-container relative h-[460px] sm:h-[490px] flex items-center justify-center max-w-4xl mx-auto">
+<!-- Cert Slide 0: Saylor ML -->
+<div class="cert-slide active absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border border-crimson-500/50 shadow-2xl flex flex-col justify-between" data-cert-index="0">
+<div class="relative w-full h-44 rounded-xl bg-white/5 border border-white/10 p-3 overflow-hidden flex flex-col justify-center items-center text-center">
+<div class="w-10 h-10 rounded-full bg-crimson-500/20 text-crimson-400 flex items-center justify-center mb-2">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"></path></svg>
+</div>
+<p class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">Saylor University</p>
+<p class="text-sm font-bold text-white mt-1">Fundamentals of Machine Learning</p>
+<p class="text-[10px] text-amberAccent font-mono mt-1">Date: 06/08/2026</p>
+<span class="text-[9px] text-neutral-400 font-mono mt-0.5">ID: 7982816099AR</span>
+</div>
+<div class="mt-4 text-left">
+<h4 class="text-base font-bold text-white font-display">Saylor University</h4>
+<p class="text-xs text-neutral-400 mt-0.5">Fundamentals of Machine Learning</p>
+<p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: 7982816099AR</p>
+</div>
+<button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(229,9,20,0.5)] transition-all" onclick="showCertModal('Saylor University', 'Fundamentals of Machine Learning', '7982816099AR', '06/08/2026')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+          View Certificate
+        </button>
+</div>
+<!-- Cert Slide 1: Kodex Byte -->
+<div class="cert-slide next-1 absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="1">
+<div class="relative w-full h-44 rounded-xl bg-white/5 border border-white/10 p-3 overflow-hidden flex flex-col justify-center items-center text-center">
+<div class="w-10 h-10 rounded-full bg-crimson-500/20 text-crimson-400 flex items-center justify-center mb-2">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path></svg>
+</div>
+<p class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">Kodex Byte</p>
+<p class="text-sm font-bold text-white mt-1">Mobile App Development</p>
+<p class="text-[10px] text-amberAccent font-mono mt-1">Date: 10/07/2026</p>
+<span class="text-[9px] text-neutral-400 font-mono mt-0.5">ID: KB-EXP-2026-2273</span>
+</div>
+<div class="mt-4 text-left">
+<h4 class="text-base font-bold text-white font-display">Kodex Byte</h4>
+<p class="text-xs text-neutral-400 mt-0.5">Mobile App Development Internship</p>
+<p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: KB-EXP-2026-2273</p>
+</div>
+<button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all" onclick="showCertModal('Kodex Byte', 'Mobile App Development', 'KB-EXP-2026-2273', '10/07/2026')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+          View Certificate
+        </button>
+</div>
+<!-- Cert Slide 2: Financial Training Institute -->
+<div class="cert-slide next-2 absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between scale-90" data-cert-index="2">
+<div class="relative w-full h-44 rounded-xl bg-white/5 border border-white/10 p-3 overflow-hidden flex flex-col justify-center items-center text-center">
+<div class="w-10 h-10 rounded-full bg-amberAccent/20 text-amberAccent flex items-center justify-center mb-2">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg>
+</div>
+<p class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">Financial Training Institute</p>
+<p class="text-sm font-bold text-white mt-1">Advance IT</p>
+<p class="text-[10px] text-amberAccent font-mono mt-1">Date: 20/07/2019</p>
+<span class="text-[9px] text-neutral-400 font-mono mt-0.5">ID: A02462</span>
+</div>
+<div class="mt-4 text-left">
+<h4 class="text-base font-bold text-white font-display">Financial Training Institute</h4>
+<p class="text-xs text-neutral-400 mt-0.5">Advance IT Specialization</p>
+<p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: A02462</p>
+</div>
+<button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all" onclick="showCertModal('Financial Training Institute', 'Advance IT', 'A02462', '20/07/2019')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+          View Certificate
+        </button>
+</div>
+<!-- Cert Slide 3: NUML Open House -->
+<div class="cert-slide prev-2 absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="3">
+<div class="relative w-full h-44 rounded-xl bg-white/5 border border-white/10 p-3 overflow-hidden flex flex-col justify-center items-center text-center">
+<div class="w-10 h-10 rounded-full bg-crimson-500/20 text-crimson-400 flex items-center justify-center mb-2">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+</div>
+<p class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">National University of Modern Languages</p>
+<p class="text-sm font-bold text-white mt-1">Open House Participation</p>
+<p class="text-[10px] text-amberAccent font-mono mt-1">Date: 08/06/2026</p>
+<span class="text-[9px] text-neutral-400 font-mono mt-0.5">Distinction in Software Engineering</span>
+</div>
+<div class="mt-4 text-left">
+<h4 class="text-base font-bold text-white font-display">NUML CS Open House</h4>
+<p class="text-xs text-neutral-400 mt-0.5">Open House Certificate of Participation</p>
+<p class="text-[11px] text-crimson-400 font-mono mt-1">Accreditation: NUML Computer Science Dept</p>
+</div>
+<button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all" onclick="showCertModal('National University of Modern Languages', 'Open House Certificate of Participation', 'NUML-OH-2026', '08/06/2026')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+          View Certificate
+        </button>
+</div>
+<!-- Cert Slide 4: PMYP Laptop Award -->
+<div class="cert-slide prev-1 absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="4">
+<div class="relative w-full h-44 rounded-xl bg-white/5 border border-white/10 p-3 overflow-hidden flex flex-col justify-center items-center text-center">
+<div class="w-10 h-10 rounded-full bg-amberAccent/20 text-amberAccent flex items-center justify-center mb-2">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 6h16v10H4V6z"></path></svg>
+</div>
+<p class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">PMYP Laptop Scheme</p>
+<p class="text-sm font-bold text-white mt-1">Merit Laptop Award</p>
+<p class="text-[10px] text-amberAccent font-mono mt-1">Date: 09/12/2025</p>
+<span class="text-[9px] text-neutral-400 font-mono mt-0.5">www.laptop.pmyp.gov.pk</span>
+</div>
+<div class="mt-4 text-left">
+<h4 class="text-base font-bold text-white font-display">Prime Minister's Youth Program</h4>
+<p class="text-xs text-neutral-400 mt-0.5">Laptop Award for Academic Excellence (NUML)</p>
+<p class="text-[11px] text-crimson-400 font-mono mt-1">Official Registry: www.laptop.pmyp.gov.pk</p>
+</div>
+<button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all" onclick="showCertModal('National University of Modern Languages / PMYP', 'Laptop Award (PMYP Laptop Scheme)', 'PMYP-NUML-2025-MERIT', '09/12/2025')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+          View Certificate
+        </button>
+</div>
+</div>
+<!-- Coverflow Navigation Buttons matching IMAGE_2 -->
+<div class="flex items-center justify-center gap-5 mt-4">
+<button aria-label="Previous certificate" class="w-12 h-12 rounded-full bg-obsidian-900 border border-white/15 hover:border-crimson-500/80 hover:bg-crimson-500/10 flex items-center justify-center text-neutral-300 hover:text-white transition-all shadow-md" onclick="prevCert()">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button aria-label="Next certificate" class="w-12 h-12 rounded-full bg-obsidian-900 border border-crimson-500 hover:border-crimson-400 bg-crimson-500/20 flex items-center justify-center text-white transition-all shadow-[0_0_20px_rgba(229,9,20,0.45)]" onclick="nextCert()">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<!-- END: CertificationsCarouselSection -->
+<!-- BEGIN: CertificateModal -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" id="cert-modal">
+<div class="glass-card max-w-lg w-full rounded-2xl p-6 border border-crimson-500/40 relative shadow-[0_0_40px_rgba(229,9,20,0.3)]">
+<button class="absolute top-4 right-4 text-neutral-400 hover:text-white p-1" onclick="closeCertModal()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</button>
+<div class="w-12 h-12 rounded-xl bg-crimson-500/20 text-crimson-400 flex items-center justify-center mb-4">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+</div>
+<span class="text-xs font-mono text-crimson-400 uppercase tracking-wider">VERIFIED CREDENTIAL</span>
+<h3 class="text-xl font-bold font-display text-white mt-1" id="modal-title">Certificate Title</h3>
+<p class="text-sm text-neutral-300 mt-0.5" id="modal-issuer">Issuer Name</p>
+<div class="bg-obsidian-850 rounded-xl p-4 mt-5 space-y-2 border border-white/5 font-mono text-xs">
+<div class="flex justify-between">
+<span class="text-neutral-400">Credential ID:</span>
+<span class="text-amberAccent" id="modal-id">ID-0000000</span>
+</div>
+<div class="flex justify-between">
+<span class="text-neutral-400">Issue Date:</span>
+<span class="text-neutral-200" id="modal-date">00/00/0000</span>
+</div>
+<div class="flex justify-between">
+<span class="text-neutral-400">Verification Status:</span>
+<span class="text-emerald-400 flex items-center gap-1">● Authenticated</span>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 py-2.5 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 text-neutral-200 text-xs font-semibold border border-white/10 transition-colors" onclick="closeCertModal()">
+        Dismiss
+      </button>
+<a class="flex-1 py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white text-xs font-semibold text-center transition-colors" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+        Verify Online
+      </a>
+</div>
+</div>
+</div>
+<!-- END: CertificateModal -->
+<!-- BEGIN: Contact & EndSection -->
+<!-- END: Contact & EndSection -->
+<!-- Interactive Scripts for 3D Rotator & Coverflow -->
+<script>
+  // Domain Rotator State
+  let currentRotator = 0;
+  const rotatorCards = document.querySelectorAll('.rotator-card');
+  const totalRotator = rotatorCards.length;
+
+  function updateRotatorClasses() {
+    rotatorCards.forEach((card, idx) => {
+      card.className = 'rotator-card absolute w-72 sm:w-96 p-6 rounded-2xl bg-obsidian-900 border text-center cursor-pointer transition-all duration-500';
+      if (idx === currentRotator) {
+        card.classList.add('active', 'border-2', 'border-crimson-500/80');
+      } else if (idx === (currentRotator + 1) % totalRotator) {
+        card.classList.add('next', 'border-white/10');
+      } else if (idx === (currentRotator - 1 + totalRotator) % totalRotator) {
+        card.classList.add('prev', 'border-white/10');
+      } else {
+        card.classList.add('hidden-card', 'border-white/10');
+      }
+    });
+  }
+
+  function nextRotator() {
+    currentRotator = (currentRotator + 1) % totalRotator;
+    updateRotatorClasses();
+  }
+
+  function prevRotator() {
+    currentRotator = (currentRotator - 1 + totalRotator) % totalRotator;
+    updateRotatorClasses();
+  }
+
+  function setRotator(idx) {
+    currentRotator = idx;
+    updateRotatorClasses();
+  }
+
+  // Coverflow Certifications State
+  let currentCert = 0;
+  const certSlides = document.querySelectorAll('.cert-slide');
+  const totalCerts = certSlides.length;
+
+  function updateCertClasses() {
+    certSlides.forEach((slide, idx) => {
+      slide.className = 'cert-slide absolute w-80 sm:w-[380px] p-6 rounded-2xl bg-obsidian-900 border shadow-2xl flex flex-col justify-between transition-all duration-500';
+      const offset = (idx - currentCert + totalCerts) % totalCerts;
+
+      if (offset === 0) {
+        slide.classList.add('active', 'border-crimson-500/50');
+      } else if (offset === 1) {
+        slide.classList.add('next-1', 'border-white/10');
+      } else if (offset === 2) {
+        slide.classList.add('next-2', 'border-white/10');
+      } else if (offset === totalCerts - 1) {
+        slide.classList.add('prev-1', 'border-white/10');
+      } else if (offset === totalCerts - 2) {
+        slide.classList.add('prev-2', 'border-white/10');
+      } else {
+        slide.classList.add('hidden-cert', 'border-white/10');
+      }
+    });
+  }
+
+  function nextCert() {
+    currentCert = (currentCert + 1) % totalCerts;
+    updateCertClasses();
+  }
+
+  function prevCert() {
+    currentCert = (currentCert - 1 + totalCerts) % totalCerts;
+    updateCertClasses();
+  }
+
+  // Certificate Modal Logic
+  function showCertModal(issuer, title, id, date) {
+    document.getElementById('modal-issuer').textContent = issuer;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-id').textContent = id;
+    document.getElementById('modal-date').textContent = date;
+    const modal = document.getElementById('cert-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeCertModal() {
+    const modal = document.getElementById('cert-modal');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+</script>
+
+
+</body></html>

@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html class="scroll-smooth h-full bg-obsidian-950" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Abdur Rehman — Full-Stack & AI/ML Engineer | Luxury Cyber Portfolio</title>
+  <meta name="description" content="Portfolio of Abdur Rehman — Full-Stack Web & Mobile Developer, AI & Machine Learning Engineer specializing in cross-platform architectures, scalable systems, and on-device neural processing.">
+  <meta name="theme-color" content="#070709">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Abdur Rehman — Full-Stack & AI/ML Engineer">
+  <meta property="og:description" content="Explore production web applications, Flutter mobile ecosystems, and deep learning speech & security models.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Syne, Anton, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'Anton', 'sans-serif'],
+            headline: ['Anton', 'sans-serif'],
+            anton: ['Anton', 'sans-serif'],
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#070709',
+              900: '#0e0e11',
+              850: '#131316',
+              800: '#1c1b1e',
+              750: '#201f22',
+              700: '#2a2a2d',
+              600: '#353438',
+            },
+            crimson: {
+              400: '#ff4d5a',
+              500: '#e50914',
+              600: '#b80710',
+              700: '#8b050c',
+            },
+            amberAccent: '#eab308',
+            goldAccent: '#e9c349',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Design System Tokens & Custom Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-obsidian-950 text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-crimson-500 selection:text-white">
+
+  <!-- Top Horizontal Scroll Progress Line -->
+  <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-[3px] z-[100] pointer-events-none bg-obsidian-950/40" aria-hidden="true">
+    <div id="scroll-progress-bar" class="h-full w-0"></div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING NAVIGATION BAR & MOBILE DRAWER                                   -->
+  <!-- ========================================================================= -->
+  <header class="fixed left-0 right-0 z-50 flex justify-center px-4 md:px-8 pointer-events-none top-4 sm:top-6 lg:top-8">
+    <nav aria-label="Main Navigation" class="glass-nav rounded-full px-4 py-2 md:px-6 md:py-2.5 w-full max-w-5xl flex items-center justify-between pointer-events-auto">
+      <!-- Brand Logo -->
+      <a aria-label="Abdur Rehman Home" class="flex items-center gap-1 group focus:outline-none" href="#home">
+        <span class="font-display text-sm md:text-base font-bold tracking-wider text-white uppercase">
+          REHMAN<span class="inline-block w-1.5 h-1.5 rounded-full bg-crimson-500 ml-1 shadow-[0_0_8px_#e50914]"></span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm tracking-wide font-medium text-neutral-300">
+        <a class="desktop-nav-link text-white font-semibold transition-colors hover:text-white" href="#home">Home</a>
+        <a class="desktop-nav-link transition-colors hover:text-white" href="#about">About</a>
+        <a class="desktop-nav-link transition-colors hover:text-white" href="#skills">Skills</a>
+        <a class="desktop-nav-link inline-flex items-center transition-colors hover:text-white group cursor-pointer" href="#projects">
+          <span>Projects</span>
+          <svg class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <a class="desktop-nav-link transition-colors hover:text-white" href="#certifications">Certifications</a>
+      </div>
+
+      <!-- Action Cluster & Mobile Hamburger Toggle -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex px-4 md:px-5 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-white bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 hover:from-crimson-600 hover:to-crimson-500 rounded-full border border-white/15 transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(229,9,20,0.5)]" href="#contact">
+          Get In Touch
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button id="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" class="md:hidden w-9 h-9 rounded-full bg-obsidian-850 border border-white/15 flex items-center justify-center text-neutral-200 hover:text-white transition-colors focus:outline-none">
+          <svg id="nav-toggle-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Dropdown Drawer -->
+  <div id="mobile-drawer" class="fixed inset-x-4 top-20 z-40 p-5 rounded-2xl glass-card border border-white/15 shadow-2xl flex flex-col gap-4 md:hidden hidden opacity-0 -translate-y-4 transition-all duration-300 pointer-events-auto">
+    <a class="mobile-nav-link text-sm font-medium text-white hover:text-crimson-400 py-1" href="#home">Home</a>
+    <a class="mobile-nav-link text-sm font-medium text-neutral-300 hover:text-crimson-400 py-1" href="#about">About</a>
+    <a class="mobile-nav-link text-sm font-medium text-neutral-300 hover:text-crimson-400 py-1" href="#skills">Skills</a>
+    <a class="mobile-nav-link text-sm font-medium text-neutral-300 hover:text-crimson-400 py-1" href="#projects">Projects Showcase</a>
+    <a class="mobile-nav-link text-sm font-medium text-neutral-300 hover:text-crimson-400 py-1" href="#certifications">Certifications & Honours</a>
+    <a class="mobile-nav-link text-sm font-semibold text-center py-2.5 rounded-xl bg-crimson-500 text-white mt-2 shadow-lg" href="#contact">Get In Touch</a>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION & CINEMATIC EXHIBITION STAGE                              -->
+  <!-- ========================================================================= -->
+  <section class="relative w-full min-h-screen border-b border-white/10 cyber-grid overflow-hidden bg-obsidian-950 flex flex-col justify-between" id="home">
+    <!-- Top Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-b border-white/5 film-sprocket flex-shrink-0 relative z-10"></div>
+
+    <!-- Interactive Mouse Spotlight & Ambient Radial Beam (Modern SaaS Look) -->
+    <div id="hero-spotlight" class="interactive-spotlight-layer"></div>
+    <div id="hero-spotlight-grid" class="hero-spotlight-grid"></div>
+    <div class="hero-radial-beam"></div>
+    <div class="hero-radial-beam-secondary"></div>
+
+    <div class="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 py-24 sm:py-28 lg:py-32 flex-1 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 z-10">
+      <!-- Left Column: Typography & CTAs -->
+      <div class="w-full lg:w-3/5 flex flex-col justify-center pt-8 lg:pt-0">
+        <!-- Live Status Badge -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-obsidian-900/90 border border-crimson-500/30 backdrop-blur-md mb-6 w-fit shadow-md">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-crimson-500"></span>
+          </span>
+          <span class="text-xs md:text-sm font-medium tracking-wide text-neutral-300 font-mono">
+            Web &amp; Mobile App Developer <span class="text-crimson-400">|</span> AI &amp; ML Engineer
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-6">
+          <span class="block font-sans text-base sm:text-lg font-normal text-neutral-400 tracking-normal mb-2">Hi, I’m</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-100 to-neutral-400">Abdur </span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-crimson-600 text-glow-crimson font-black">Rehman</span>
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="max-w-xl text-base sm:text-lg text-neutral-300 font-light leading-relaxed mb-8">
+          I build Modern Web &amp; Mobile Applications, Cross-Platform Architectures, and Intelligent AI/ML Systems with precision, speed, and architectural elegance.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-crimson-600 to-crimson-500 hover:from-crimson-500 hover:to-crimson-400 text-white font-semibold text-sm tracking-wide btn-glow-crimson transition-all duration-300 shadow-xl" href="#projects">
+            <span>Explore My Work</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-obsidian-900/80 hover:bg-obsidian-850 text-neutral-300 hover:text-white border border-white/10 hover:border-white/25 backdrop-blur-md font-medium text-sm tracking-wide transition-all duration-300" href="#about">
+            About Journey
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Split Screen Portrait with Vertical Marquee Ribbon & Floating Breathing Pills -->
+      <div class="w-full lg:w-2/5 h-[480px] sm:h-[540px] relative rounded-3xl overflow-hidden bg-obsidian-900 flex items-center justify-center border border-white/10 shadow-2xl">
+        <!-- Portrait Image -->
+        <img alt="Abdur Rehman Portrait Hero Atmosphere" class="w-full h-full object-cover object-center filter brightness-95 contrast-105" src="assets/images/main-hero.png">
+
+        <!-- Atmospheric Vignette & Glow Overlays -->
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-obsidian-950/70 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-obsidian-950/40 via-transparent to-transparent pointer-events-none"></div>
+
+        <!-- Vertical Typographic Marquee Ticker -->
+        <div class="absolute right-3 inset-y-0 w-12 overflow-hidden pointer-events-none flex flex-col justify-start select-none opacity-25">
+          <div class="animate-marquee-vert font-anton text-2xl tracking-widest text-neutral-400 uppercase whitespace-nowrap [writing-mode:vertical-rl]">
+            ABDUR REHMAN — WEB &amp; MOBILE APP DEVELOPER — AI &amp; ML ENGINEER — FLUTTER &amp; DART — HTML CSS &amp; JS — AI &amp; ML — ABDUR REHMAN — WEB &amp; MOBILE APP DEVELOPER — AI &amp; ML ENGINEER — FLUTTER &amp; DART — HTML CSS &amp; JS — AI &amp; ML —
+          </div>
+        </div>
+
+        <!-- Breathing Quick-Connect Badges -->
+        <div class="absolute inset-0 p-6 pointer-events-none flex flex-col justify-between">
+          <!-- LinkedIn Pill -->
+          <div class="flex justify-start pt-6">
+            <a class="glass-pill animate-breathing pointer-events-auto flex items-center gap-2.5 py-1.5 px-3.5 rounded-full cursor-pointer group shadow-2xl" href="https://linkedin.com/in/rehman90" rel="noopener noreferrer" target="_blank">
+              <div class="w-7 h-7 rounded-lg bg-obsidian-900 border border-amberAccent/40 flex items-center justify-center flex-shrink-0 shadow-inner group-hover:border-amberAccent transition-colors">
+                <svg class="w-3.5 h-3.5 text-amberAccent" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.67 1.67 0 1 0 0-3.34 1.67 1.67 0 0 0 0 3.34m1.4 10.74v-8.37H5.06v8.37h2.8z"></path>
+                </svg>
+              </div>
+              <span class="text-white font-semibold text-xs tracking-wide group-hover:text-amberAccent transition-colors">LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- GitHub Pill -->
+          <div class="flex justify-end pr-2">
+            <a class="glass-pill animate-breathing-slow pointer-events-auto flex items-center gap-2.5 py-1.5 px-3.5 rounded-full cursor-pointer group shadow-2xl" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+              <div class="w-7 h-7 rounded-lg bg-obsidian-900 border border-amberAccent/40 flex items-center justify-center flex-shrink-0 shadow-inner group-hover:border-amberAccent transition-colors">
+                <svg class="w-3.5 h-3.5 text-amberAccent" fill="currentColor" viewBox="0 0 24 24">
+                  <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-white font-semibold text-xs tracking-wide group-hover:text-amberAccent transition-colors">GitHub</span>
+            </a>
+          </div>
+
+          <!-- Mail Pill -->
+          <div class="flex justify-start pb-4 pl-2">
+            <button class="glass-pill animate-breathing-delayed pointer-events-auto flex items-center gap-2.5 py-1.5 px-3.5 rounded-full cursor-pointer group shadow-2xl text-left" onclick="copyEmail('mailrehman90527300@gmail.com')">
+              <div class="w-7 h-7 rounded-lg bg-obsidian-900 border border-amberAccent/40 flex items-center justify-center flex-shrink-0 shadow-inner group-hover:border-amberAccent transition-colors">
+                <svg class="w-3.5 h-3.5 text-amberAccent" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                  <rect height="16" rx="2" width="20" x="2" y="4"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <span class="text-white font-semibold text-xs tracking-wide group-hover:text-amberAccent transition-colors">Email Me</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-t border-white/5 film-sprocket flex-shrink-0"></div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 2. ABOUT SECTION & 3D DOMAIN ROTATOR                                      -->
+  <!-- ========================================================================= -->
+  <section class="relative min-h-screen w-full flex items-center justify-center py-20 sm:py-28 px-4 sm:px-8 bg-obsidian-950 overflow-hidden border-b border-white/5" id="about">
+    <!-- Ambient Radial Glows -->
+    <div class="absolute inset-0 pointer-events-none select-none z-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-crimson-500/10 blur-[150px] rounded-full"></div>
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-crimson-600/10 blur-[130px] rounded-full"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Biography & Philosophy -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono tracking-widest uppercase">
+            [ 01 // PROFILE &amp; PHILOSOPHY ]
+          </div>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            Crafting <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-crimson-600">Digital Solutions</span>
+          </h2>
+          <p class="text-neutral-300 text-base sm:text-lg leading-relaxed font-light">
+            A dedicated Computer Science graduate from NUML specializing in the intersection of modern cross-platform mobile architectures, resilient web applications, and embedded AI/ML processing pipelines. Focused on delivering high-velocity, real-world utility through mathematical rigor, offline accessibility, and human-first user experiences.
+          </p>
+
+          <!-- Metric Stat Badges -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <div class="px-4 py-2 rounded-xl bg-obsidian-850 border border-crimson-500/30 flex items-center gap-2 shadow-sm hover:border-crimson-500/60 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-crimson-500 shadow-[0_0_8px_#e50914]"></span>
+              <span class="text-xs sm:text-sm font-semibold text-white">Cross-Platform &amp; Web Apps</span>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-obsidian-850 border border-amberAccent/40 flex items-center gap-2 shadow-sm hover:border-amberAccent/70 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-amberAccent shadow-[0_0_8px_#eab308] animate-pulse"></span>
+              <span class="text-xs sm:text-sm font-semibold text-white">9+ Production Projects</span>
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-obsidian-850 border border-cyan-500/30 flex items-center gap-2 shadow-sm hover:border-cyan-500/60 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.6)]"></span>
+              <span class="text-xs sm:text-sm font-semibold text-white">Edge AI &amp; Cloud Backends</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 3D Interactive Domain Rotator -->
+        <div class="lg:col-span-6 flex flex-col items-center justify-center relative w-full">
+          <div class="w-full mb-6 text-center">
+            <h3 class="text-2xl sm:text-3xl font-bold font-display text-white tracking-tight">DOMAIN ROTATOR</h3>
+            <p class="text-xs sm:text-sm text-neutral-400 mt-1 font-light">Interactive multi-stack engine. Explore focused core specializations.</p>
+          </div>
+
+          <!-- 3D Perspective Carousel Container -->
+          <div class="relative w-full h-80 sm:h-96 flex items-center justify-center perspective-container overflow-visible">
+            <!-- Card 0: Mobile & Web -->
+            <div class="rotator-card active absolute w-72 sm:w-80 p-5 sm:p-6 rounded-2xl bg-obsidian-900 border-2 border-crimson-500/80 text-center cursor-pointer select-none shadow-2xl" onclick="setRotator(0)">
+              <div class="rotator-icon w-12 h-12 mx-auto mb-3 rounded-xl bg-crimson-500/20 border border-crimson-500 flex items-center justify-center text-crimson-400 text-lg font-bold font-mono shadow-[0_0_15px_rgba(229,9,20,0.5)] transition-all duration-300">
+                UI
+              </div>
+              <span class="text-[10px] font-mono text-crimson-400 uppercase tracking-widest font-semibold block mb-1">Mobile &amp; Web</span>
+              <h4 class="text-lg sm:text-xl font-bold font-display text-white mb-2">Mobile &amp; Web</h4>
+              <p class="text-xs font-mono text-neutral-300 mb-4 leading-relaxed">Flutter • Dart • JavaScript • HTML5 • CSS3</p>
+              <div class="rotator-pill inline-block px-3.5 py-1.5 rounded-full bg-crimson-500/10 border border-crimson-500/40 text-xs text-crimson-400 font-medium transition-all duration-300">
+                Cross-Platform &amp; UI Development
+              </div>
+            </div>
+
+            <!-- Card 1: Data & Cloud Infrastructure -->
+            <div class="rotator-card next absolute w-72 sm:w-80 p-5 sm:p-6 rounded-2xl bg-obsidian-900 border border-white/10 text-center cursor-pointer select-none shadow-xl" onclick="setRotator(1)">
+              <div class="rotator-icon w-12 h-12 mx-auto mb-3 rounded-xl bg-crimson-500/10 border border-crimson-500/30 flex items-center justify-center text-crimson-400 text-lg font-bold font-mono transition-all duration-300">
+                DB
+              </div>
+              <span class="text-[10px] font-mono text-crimson-400 uppercase tracking-widest font-semibold block mb-1">Data &amp; Cloud Infrastructure</span>
+              <h4 class="text-lg sm:text-xl font-bold font-display text-white mb-2">Backend &amp; Cloud DBs</h4>
+              <p class="text-xs font-mono text-neutral-400 mb-4 leading-relaxed">Supabase • PostgreSQL • Firebase • Python • C++</p>
+              <div class="rotator-pill inline-block px-3.5 py-1.5 rounded-full bg-obsidian-850 border border-white/10 text-xs text-neutral-300 font-medium transition-all duration-300">
+                Relational Data &amp; Backend APIs
+              </div>
+            </div>
+
+            <!-- Card 2: AI & Development Tooling -->
+            <div class="rotator-card prev absolute w-72 sm:w-80 p-5 sm:p-6 rounded-2xl bg-obsidian-900 border border-white/10 text-center cursor-pointer select-none shadow-xl" onclick="setRotator(2)">
+              <div class="rotator-icon w-12 h-12 mx-auto mb-3 rounded-xl bg-crimson-500/10 border border-crimson-500/30 flex items-center justify-center text-crimson-400 text-lg font-bold font-mono transition-all duration-300">
+                AI
+              </div>
+              <span class="text-[10px] font-mono text-crimson-400 uppercase tracking-widest font-semibold block mb-1">AI &amp; Development Tooling</span>
+              <h4 class="text-lg sm:text-xl font-bold font-display text-white mb-2">ML &amp; Dev Workflows</h4>
+              <p class="text-xs font-mono text-neutral-400 mb-4 leading-relaxed">PyTorch • ONNX • Git • Colab • VS Code</p>
+              <div class="rotator-pill inline-block px-3.5 py-1.5 rounded-full bg-obsidian-850 border border-white/10 text-xs text-neutral-300 font-medium transition-all duration-300">
+                Machine Learning &amp; Version Control
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="flex items-center justify-center gap-4 mt-4 z-20">
+            <button aria-label="Previous Domain" class="w-10 h-10 rounded-full bg-obsidian-850 border border-white/15 flex items-center justify-center text-neutral-300 hover:text-white hover:border-crimson-500 transition-all focus:outline-none shadow-md" onclick="prevRotator()">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </button>
+            <div id="rotator-indicators" class="flex items-center gap-2">
+              <span class="w-5 h-2 rounded-full bg-crimson-500 shadow-[0_0_8px_#e50914] cursor-pointer transition-all duration-300" onclick="setRotator(0)"></span>
+              <span class="w-2 h-2 rounded-full bg-white/20 cursor-pointer transition-all duration-300 hover:bg-white/40" onclick="setRotator(1)"></span>
+              <span class="w-2 h-2 rounded-full bg-white/20 cursor-pointer transition-all duration-300 hover:bg-white/40" onclick="setRotator(2)"></span>
+            </div>
+            <button aria-label="Next Domain" class="w-10 h-10 rounded-full bg-obsidian-850 border border-white/15 flex items-center justify-center text-neutral-300 hover:text-white hover:border-crimson-500 transition-all focus:outline-none shadow-md" onclick="nextRotator()">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. SKILLS SECTION (TECHNICAL ARSENAL)                                     -->
+  <!-- ========================================================================= -->
+  <section class="relative min-h-screen w-full flex flex-col justify-between py-0 bg-obsidian-950 cyber-grid overflow-hidden border-b border-white/10" id="skills">
+    <!-- Top Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-b border-white/5 film-sprocket flex-shrink-0 relative z-10"></div>
+
+    <!-- Interactive Mouse Spotlight & Ambient Radial Beam (Hero Style) -->
+    <div id="skills-spotlight" class="interactive-spotlight-layer"></div>
+    <div id="skills-spotlight-grid" class="hero-spotlight-grid"></div>
+    <div class="hero-radial-beam"></div>
+    <div class="hero-radial-beam-secondary"></div>
+
+    <!-- Subtle Multi-layer Flares -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] bg-crimson-500/[0.08] blur-[150px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-amberAccent/[0.03] blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 my-auto">
+      <!-- Header Area -->
+      <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono tracking-widest uppercase mb-5 badge-glow">
+          <span class="w-1.5 h-1.5 rounded-full bg-crimson-500 animate-pulse"></span>
+          [ 03 // TECHNICAL ARSENAL ]
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+          Comprehensive <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-crimson-600 text-glow-crimson">Skillset</span>
+        </h2>
+        <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans font-light">
+          Engineered with clean architectural principles, high efficiency, and production robustness.
+        </p>
+      </div>
+
+      <!-- 4-Column Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+        <!-- Card 1: Programming & Scripting -->
+        <div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent group-hover:via-crimson-500 transition-all duration-500"></div>
+          <div>
+            <div class="relative w-12 h-12 mb-6">
+              <div class="absolute inset-0 rounded-xl bg-crimson-500/20 blur-md group-hover:blur-lg group-hover:bg-crimson-500/30 transition-all"></div>
+              <div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-crimson-500/30 flex items-center justify-center text-crimson-400 shadow-inner group-hover:border-crimson-500/60 transition-colors">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Programming &amp; Scripting</h3>
+            <p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-crimson-400"></span> Core Languages
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M14.314 0L2.3 12l3.8 3.8L21.914 0h-7.6z" fill="#02569B"></path><path d="M14.314 10.743L7.9 17.157l3.8 3.8 2.614-2.614 7.6-7.6h-7.6z" fill="#0175C2"></path><path d="M11.7 20.957L14.314 23.571H21.914l-6.414-6.414-3.8 3.8z" fill="#29B6F6"></path></svg>Flutter</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M4.1 12.5L12 4.6l5.7 5.7-1.4 1.4-4.3-4.3-6.5 6.5 1.4 1.4 4.3-4.3L17 19.8l2.9-2.9L12 9l-4.3 4.3 1.4 1.4 2.9-2.9L17 17l-5 5-7.9-9.5z" fill="#00B4AB"></path><path d="M12 4.6L4.1 12.5 2 10.4 10.4 2l1.6 2.6z" fill="#0175C2"></path><path d="M17.7 10.3L12 4.6l1.6-2.6 7.8 7.8-3.7.5z" fill="#02569B"></path><path d="M12 22l-7.9-9.5 2.1-2.1L12 16.2V22z" fill="#00B4AB"></path><path d="M12 22l7.9-5.1-2.9 2.9-5 2.2z" fill="#0175C2"></path></svg>Dart</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M11.87 2c-5.4 0-5.06 2.34-5.06 2.34l.01 2.42h5.15v.73H4.82S2 7.15 2 12.58c0 5.43 2.46 5.24 2.46 5.24h1.47v-2.07s-.08-2.46 2.42-2.46h5.12s2.34.04 2.34-2.29V4.38S16.27 2 11.87 2zm-1.41 1.54a.79.79 0 1 1 0 1.58.79.79 0 0 1 0-1.58z" fill="#3776AB"></path><path d="M12.13 22c5.4 0 5.06-2.34 5.06-2.34l-.01-2.42h-5.15v-.73h7.15s2.82.34 2.82-5.09c0-5.43-2.46-5.24-2.46-5.24h-1.47v2.07s.08 2.46-2.42 2.46H10.5s-2.34-.04-2.34 2.29v8.62S7.73 22 12.13 22zm1.41-1.54a.79.79 0 1 1 0-1.58.79.79 0 0 1 0 1.58z" fill="#FFD43B"></path></svg>Python</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M11.5 3.5a8.5 8.5 0 1 0 5.8 14.7l-2-2.3a5.5 5.5 0 1 1-3.8-9.4 5.4 5.4 0 0 1 3.7 1.5l2-2.3A8.4 8.4 0 0 0 11.5 3.5z" fill="#00599C"></path><path d="M18 10h1v1.5H18v1h-1.5v-1H15V10h1.5V8.5H18V10zm4 0h1v1.5H22v1h-1.5v-1H19V10h1.5V8.5H22V10z" fill="#659AD2"></path></svg>C++</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M8.8 17.5c2.9.2 5.5-.1 8-.9 0 0 .5.7-.6 1.3-2.9 1.4-8 .9-9.9-.1 0 0 .7-.3 2.5-.3z" fill="#5382A1"></path><path d="M7.7 15.6c2.4.2 4.5.1 6.5-.5 0 0 .4.6-.5 1-2.4 1.1-6.6.7-8.1-.1 0 0 .5-.3 2.1-.4z" fill="#E76F00"></path><path d="M13 10.3c1 .9 2.2 2.1 1.2 3.5-.8 1.1-2.4 1.4-3.6 1.4-1.9 0-3.5-.7-4.2-1.3-.2-.2-.1-.5.1-.6.3-.1 1.1.2 2.7.2 1.3 0 2.9-.3 3.5-.9.9-.9.4-1.8-.1-2.4-.7-.8-1.5-1.5-1.5-2.6 0-1.1.7-2 1.4-2.8.2-.2.5-.1.5.1.2.9.8 1.9 1.5 2.6.4.4.9.9 1.3 1.5 0 0-.8-.1-1.3-.4-.6-.4-1.3-.9-1.5-1.5.7 1.3 2.1 2.3 2.5 3.4.1.3 0 .7-.2 1-.3.5-.8.8-1.4.9-.7.1-1.4 0-2.1-.2 1.1-.3 1.8-.8 2-1.5.1-.6-.2-1.1-.7-1.4l-.5-.3z" fill="#E76F00"></path><path d="M18.8 15.2c.4-.7.6-1.5.5-2.3 0-.1-.1-.2-.2-.2-.1 0-.2.1-.2.2-.1 1.1-.6 2.1-1.4 2.8 1-.2 1.2-.4 1.3-.5z" fill="#5382A1"></path></svg>Java</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 rounded-[2px]" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="3" fill="#F7DF1E"></rect><path d="M7.5 18c-.8 0-1.5-.2-2-.6l.7-1.5c.4.3.8.5 1.4.5.6 0 .9-.3.9-.9v-5.2h1.9v5.3c0 1.7-1 2.4-2.9 2.4zm8.2 0c-2 0-3.2-1.1-3.2-2.7 0-1.5.9-2.2 2.4-2.7l.7-.3c.7-.2 1-.5 1-.9 0-.5-.4-.8-1.1-.8-.6 0-1.2.2-1.7.6l-.7-1.4c.7-.5 1.5-.8 2.5-.8 2 0 3 1.1 3 2.6 0 1.3-.7 2.1-2.2 2.6l-.8.3c-.7.3-1 .5-1 1 0 .5.5.8 1.2.8.8 0 1.4-.3 1.9-.7l.7 1.4c-.7.5-1.7.8-2.9.8z" fill="#000000"></path></svg>JavaScript</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18.2L12 22.5l7.4-2.3L21 2H3z" fill="#E34F26"></path><path d="M12 3.8v16.8l5.8-1.8 1.4-15H12z" fill="#EF652A"></path><path d="M12 7.7H7.7l.2 2.3h4.1V7.7zm0 4.6H9.7l.2 2.3h2.1v-2.3zm0 4.6l-2.6-.7-.2-1.8H7.3l.3 3.4L12 21.1v-4.2z" fill="#EBEBEB"></path><path d="M12 7.7v2.3h4.1l-.4 4.6-3.7 1v2.3l5.8-1.6.8-8.6H12z" fill="#FFFFFF"></path></svg>HTML5</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18.2L12 22.5l7.4-2.3L21 2H3z" fill="#1572B6"></path><path d="M12 3.8v16.8l5.8-1.8 1.4-15H12z" fill="#33A9DC"></path><path d="M12 7.7H7.7l.2 2.3h4.1V7.7zm0 4.6H7.9l.2 2.3h3.9v-2.3zm0 4.6l-2.6-.7-.2-1.8H7.3l.3 3.4L12 21.1v-4.2z" fill="#EBEBEB"></path><path d="M12 7.7v2.3h4.1l-.4 4.6-3.7 1v2.3l5.8-1.6.8-8.6H12z" fill="#FFFFFF"></path></svg>CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Databases & Cloud -->
+        <div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-500 transition-all duration-500"></div>
+          <div>
+            <div class="relative w-12 h-12 mb-6">
+              <div class="absolute inset-0 rounded-xl bg-amber-500/20 blur-md group-hover:blur-lg group-hover:bg-amber-500/30 transition-all"></div>
+              <div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-inner group-hover:border-amber-500/60 transition-colors">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Databases &amp; Cloud</h3>
+            <p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-amber-400"></span> Storage &amp; BaaS
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M4.3 16.9l2.2-14c.1-.5.7-.7 1-.4l10.9 14.4c.4.5.1 1.2-.5 1.2H4.8c-.4 0-.6-.3-.5-.7z" fill="#FFA000"></path><path d="M3.9 17.5L8.5 7.1c.2-.5.9-.6 1.2-.1l8.8 11.2c.4.5 0 1.2-.6 1.2H4.4c-.4 0-.6-.5-.5-.9z" fill="#F57C00"></path><path d="M12.9 10.9l2.1-4.2c.3-.5 1-.5 1.2 0l4.3 12.1c.2.6-.3 1.2-.9 1.2H12l.9-9.1z" fill="#FFCA28"></path></svg>Firebase</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12.4 2C8.6 2 5.5 4.8 5.5 8.3c0 2.2 1.3 4.2 3.3 5.4v5.8c0 .8.6 1.5 1.5 1.5h4.1c.8 0 1.5-.7 1.5-1.5v-2.3c2.4-.7 4.1-2.9 4.1-5.6C20 7.8 16.6 2 12.4 2zm2.1 13.5v3.5h-4.1v-3.5c1.4.3 2.7.3 4.1 0zM12.4 4c2.8 0 5.4 3.9 5.4 7.6 0 2.4-1.6 4.4-3.7 4.8-1.1-.3-2.3-.3-3.4 0-2.1-.5-3.7-2.4-3.7-4.8 0-4 2.6-7.6 5.4-7.6z" fill="#336791"></path><circle cx="14.5" cy="7.5" r="1" fill="#336791"></circle><path d="M10.2 12c.5.8 1.3 1.3 2.2 1.3s1.7-.5 2.2-1.3" stroke="#336791" stroke-width="1.2" stroke-linecap="round"></path></svg>PostgreSQL</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M13.4 21.6c-.6.8-1.9.4-1.9-.6v-8.6h9.1c.9 0 1.4 1 .8 1.7l-8 7.5z" fill="#3ECF8E"></path><path d="M10.6 2.4c.6-.8 1.9-.4 1.9.6v8.6H3.4c-.9 0-1.4-1-.8-1.7l8-7.5z" fill="#249361"></path><path d="M12.5 11.4h-9.1c-.9 0-1.4-1-.8-1.7l8-7.5c.6-.8 1.9-.4 1.9.6v8.6z" fill="#3ECF8E"></path></svg>Supabase</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.5 3 2 4.3 2 6v12c0 1.7 4.5 3 10 3s10-1.3 10-3V6c0-1.7-4.5-3-10-3z" fill="#CC292B" opacity="0.2"></path><path d="M12 3c5.5 0 10 1.3 10 3s-4.5 3-10 3-10-1.3-10-3 4.5-3 10-3zm10 6.5c0 1.7-4.5 3-10 3s-10-1.3-10-3v3c0 1.7 4.5 3 10 3s10-1.3 10-3v-3zm0 6c0 1.7-4.5 3-10 3s-10-1.3-10-3v3c0 1.7 4.5 3 10 3s10-1.3 10-3v-3z" fill="#CC292B"></path></svg>MS SQL</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M18.8 8.4c-1-.7-2.3-.9-3.4-.6-1 .3-1.8.9-2.3 1.8-.4-.9-1.2-1.5-2.2-1.8-1.1-.3-2.4-.1-3.4.6-2.2 1.5-2.8 4.6-1.3 6.8.9 1.4 2.5 2.2 4.1 2.2.8 0 1.6-.2 2.3-.6l-.8-1.4c-.5.3-1 .4-1.5.4-1.1 0-2.2-.6-2.8-1.6-1-1.6-.6-3.7 1-4.7.7-.5 1.5-.6 2.3-.4.8.2 1.4.7 1.7 1.4h1.8c.3-.7.9-1.2 1.7-1.4.8-.2 1.6-.1 2.3.4 1.6 1 2 3.1 1 4.7-.6 1-1.7 1.6-2.8 1.6-.5 0-1-.1-1.5-.4l-.8 1.4c.7.4 1.5.6 2.3.6 1.6 0 3.2-.8 4.1-2.2 1.5-2.2.9-5.3-1.3-6.8z" fill="#00758F"></path><path d="M12 4c.6 1.1 1.6 1.9 2.8 2.2l-.4 1.5c-1.6-.4-2.9-1.5-3.7-2.9L12 4z" fill="#F29111"></path></svg>MySQL</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#A4373A"></rect><path d="M12 6.5l4 11h-2.1l-.8-2.6H10.9L10.1 17.5H8l4-11zm.6 6.8l-1.1-3.6-1.1 3.6h2.2z" fill="#FFFFFF"></path></svg>MS Access</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Tools & Environments -->
+        <div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-neutral-400/30 to-transparent group-hover:via-crimson-500/60 transition-all duration-500"></div>
+          <div>
+            <div class="relative w-12 h-12 mb-6">
+              <div class="absolute inset-0 rounded-xl bg-neutral-400/10 blur-md group-hover:blur-lg group-hover:bg-crimson-500/20 transition-all"></div>
+              <div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-white/15 flex items-center justify-center text-neutral-200 shadow-inner group-hover:border-crimson-500/50 group-hover:text-crimson-400 transition-colors">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Tools &amp; Environments</h3>
+            <p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-neutral-400"></span> Dev Tooling
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M21.6 10.9l-8.5-8.5c-.8-.8-2.1-.8-2.8 0L8.4 4.3l3.6 3.6c.6-.2 1.4-.1 1.9.4.5.5.7 1.3.4 1.9l3.5 3.5c.6-.3 1.4-.1 1.9.4.8.8.8 2.1 0 2.8-.8.8-2.1.8-2.8 0-.6-.6-.7-1.5-.3-2.2L13.3 11v5.1c.2.2.3.4.3.7 0 .8-.5 1.5-1.3 1.8-.8.3-1.7 0-2.1-.8-.4-.7-.2-1.7.5-2.2.2-.1.5-.2.8-.2V10c-.3 0-.6-.1-.8-.3-.6-.6-.7-1.5-.3-2.2L6.8 4 2.4 8.4c-.8.8-.8 2.1 0 2.8l8.5 8.5c.8.8 2.1.8 2.8 0l7.9-7.9c.8-.8.8-2 0-2.8z" fill="#F05032"></path></svg>Git</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>GitHub</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M6.8 8.9L5.3 6.3c-.2-.4 0-.9.4-1.1.4-.2.9 0 1.1.4l1.6 2.8c1.1-.5 2.4-.8 3.7-.8s2.6.3 3.7.8l1.6-2.8c.2-.4.7-.6 1.1-.4.4.2.6.7.4 1.1l-1.5 2.6c2.3 1.3 3.9 3.5 4.3 6.2H3.7c.4-2.6 2-4.9 4.3-6.1zM8.5 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#3DDC84"></path><rect x="3.7" y="16.5" width="16.6" height="3.5" rx="1.5" fill="#3DDC84"></rect></svg>Android Studio</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M17.4 2.1l4.4 2.1c.7.3 1.2 1 1.2 1.8v12c0 .8-.5 1.5-1.2 1.8l-4.4 2.1c-.6.3-1.4.1-1.8-.4l-9.2-8.3 9-8.7c.5-.5 1.3-.7 2-.4z" fill="#007ACC"></path><path d="M17.4 2.1L6.4 12.6l-3.8-3c-.6-.5-.6-1.4 0-1.9l2.8-2.2c.5-.4 1.2-.4 1.7 0l10.3-3.4z" fill="#1F9CF0"></path><path d="M2.6 16.3l3.8-3 11 10.6-10.3-3.4c-.5.4-1.2.4-1.7 0l-2.8-2.3c-.6-.5-.6-1.4 0-1.9z" fill="#0065A9"></path><path d="M16.5 12l-10.1 7.2L2.6 16.3c-.6-.5-.6-1.4 0-1.9L6.4 12 2.6 9.6c-.6-.5-.6-1.4 0-1.9l3.8-2.9L16.5 12z" fill="#007ACC" opacity="0.6"></path></svg>VS Code</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M17.3 2.3l4.5 3.3c.7.5 1.2 1.3 1.2 2.2v8.4c0 .9-.5 1.7-1.2 2.2l-4.5 3.3c-.7.5-1.7.5-2.4-.1l-9-7.6 9-7.6c.7-.6 1.7-.6 2.4-.1z" fill="#5C2D91"></path><path d="M17.3 2.3L6.8 12.2l-4.4-3.5c-.6-.5-.6-1.4 0-1.9l2.3-1.8c.6-.5 1.4-.5 2 0l10.6-2.7z" fill="#8549BA"></path><path d="M2.4 17.2l4.4-3.5 10.5 9.9-10.6-2.7c-.6.5-1.4.5-2 0l-2.3-1.8c-.6-.5-.6-1.4 0-1.9z" fill="#47226F"></path></svg>Visual Studio</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0 rounded-[2px]" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="3" fill="#21D789"></rect><path d="M2 2h9v9H2V2z" fill="#000"></path><path d="M13 13h9v9h-9v-9z" fill="#FC801D"></path><path d="M2 13h9v9H2v-9z" fill="#21D789"></path><rect x="2" y="2" width="20" height="20" rx="2" fill="#1B1B1B"></rect><path d="M5.5 17h5v1.2h-5V17z" fill="#21D789"></path><path d="M5.5 6.5h3.4c1.4 0 2.3.9 2.3 2.1 0 1.3-.9 2.1-2.3 2.1H7V13H5.5V6.5zm1.5 3h1.8c.6 0 1-.4 1-.9 0-.6-.4-.9-1-.9H7v1.8zM12.4 9.8c0-2.1 1.5-3.5 3.6-3.5 1.3 0 2.3.5 2.9 1.3l-1.1 1c-.4-.5-1-.8-1.7-.8-1.2 0-2.1.9-2.1 2s.9 2.1 2.1 2.1c.8 0 1.4-.4 1.8-.9l1.1.9c-.7.9-1.7 1.4-3 1.4-2.1-.1-3.6-1.4-3.6-3.5z" fill="#FFF"></path></svg>PyCharm</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M12 6.5c-3.1 0-5.6 2.5-5.6 5.5s2.5 5.5 5.6 5.5 5.6-2.5 5.6-5.5-2.5-5.5-5.6-5.5zm0 9c-2 0-3.6-1.6-3.6-3.5s1.6-3.5 3.6-3.5 3.6 1.6 3.6 3.5-1.6 3.5-3.6 3.5z" fill="#F9AB00"></path><path d="M7 12c0-2.8-2.2-5-5-5S-.2 9.2 0 12c.2 2.8 2.4 5 5.2 5s4.8-2.2 4.8-5zm-5 3c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z" fill="#E37400" transform="translate(5, 0)"></path></svg>Google Colab</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><path d="M13.2 2.3a8.8 8.8 0 0 0-8.8 8.8c0 3.2 1.7 6 4.3 7.5l.7-1.7a6.9 6.9 0 0 1-3.2-5.8c0-3.9 3.1-7 7-7s7 3.1 7 7a6.9 6.9 0 0 1-3.2 5.8l.7 1.7a8.8 8.8 0 0 0 4.3-7.5c0-4.9-3.9-8.8-8.8-8.8z" fill="#EE4C2C"></path><circle cx="16.5" cy="5.5" r="1.5" fill="#EE4C2C"></circle></svg>PyTorch / ONNX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Productivity Systems -->
+        <div class="group frosted-glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent group-hover:via-crimson-500 transition-all duration-500"></div>
+          <div>
+            <div class="relative w-12 h-12 mb-6">
+              <div class="absolute inset-0 rounded-xl bg-crimson-500/20 blur-md group-hover:blur-lg group-hover:bg-crimson-500/30 transition-all"></div>
+              <div class="relative w-12 h-12 rounded-xl bg-obsidian-900/90 border border-crimson-500/30 flex items-center justify-center text-crimson-400 shadow-inner group-hover:border-crimson-500/60 transition-colors">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect height="18" rx="2" width="18" x="3" y="3"></rect>
+                  <path d="M3 9h18"></path>
+                  <path d="M9 21V9"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1.5 font-display tracking-wide group-hover:text-neutral-100 transition-colors">Productivity Systems</h3>
+            <p class="text-xs text-neutral-400 mb-5 font-mono flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-crimson-400"></span> Content &amp; Operations
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#21759B"></circle><path d="M3.5 12c0 3.8 2.5 7.1 6 8.2L5.4 8.7C4.2 9.6 3.5 10.7 3.5 12zm13.1-.6c0-.9-.3-1.6-.6-2.2-.5-.8-1-1.4-1-2.2 0-.9.7-1.7 1.7-1.7.1 0 .2 0 .3.1C15.6 4.3 13.9 3.8 12 3.8c-2.7 0-5.1 1.1-6.7 2.9l4.5 12.3 3.4-10.2c.2-.5.3-.9.3-1.2.2 2 .7 3.4 1.1 4.5l2 5.9c2-1.5 3.4-3.8 3.4-6.5 0-.8-.1-1.6-.4-2.3l-3.1 2.2zM12 20.3c.6 0 1.2-.1 1.8-.2l-2.9-8.4-3 8.3c1.3.2 2.7.3 4.1.3z" fill="#FFFFFF"></path></svg>WordPress</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="9.5" height="9.5" rx="1" fill="#F25022"></rect><rect x="12.5" y="2" width="9.5" height="9.5" rx="1" fill="#7FBA00"></rect><rect x="2" y="12.5" width="9.5" height="9.5" rx="1" fill="#00A4EF"></rect><rect x="12.5" y="12.5" width="9.5" height="9.5" rx="1" fill="#FFB900"></rect></svg>Microsoft 365 Suite</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#185ABD"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#41A5EE"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#103F91"></rect><path d="M6.2 14.5l1-5h1.2l.9 3.4.9-3.4h1.2l1 5h-1.2l-.6-3.4-.9 3.4H8.8l-.9-3.4-.6 3.4H6.2z" fill="#FFFFFF"></path></svg>Word</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#C43E1C"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#ED6C47"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#98240D"></rect><path d="M7 14.5V9.5h2.6c1.2 0 2 .7 2 1.8 0 1.1-.8 1.8-2 1.8H8.3v1.4H7zm1.3-2.5h1.2c.5 0 .9-.3.9-.7 0-.5-.4-.7-.9-.7H8.3v1.4z" fill="#FFFFFF"></path></svg>PowerPoint</span>
+              <span class="pill-tag px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-200 flex items-center gap-2"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="15" height="18" rx="2" fill="#107C41"></rect><path d="M20 7.5L14 3v4.5h6z" fill="#33C481"></path><rect x="3" y="6.5" width="11" height="11" rx="1.5" fill="#074723"></rect><path d="M6.5 14.5l1.8-2.6-1.6-2.4h1.5l1 1.6 1-1.6h1.5l-1.7 2.4 1.8 2.6H10.3l-1.1-1.8-1.2 1.8H6.5z" fill="#FFFFFF"></path></svg>Excel Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-t border-white/5 film-sprocket flex-shrink-0 relative z-10"></div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. PROJECTS SECTION (WEB, MOBILE, AI & ML)                                -->
+  <!-- ========================================================================= -->
+  <section class="relative py-24 bg-obsidian-950 border-b border-white/5 min-h-screen contour-ambient-bg" id="projects">
+    <!-- Ambient Background Glows -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-crimson-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-1/3 left-10 w-[500px] h-[400px] bg-amberAccent/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <!-- Section Header & Category Filter Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono tracking-widest uppercase mb-4">
+            [ 04 // PRODUCTION SHOWCASE ]
+          </div>
+          <h2 class="font-display text-4xl sm:text-6xl font-bold text-white tracking-tight">
+            Engineered <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 to-crimson-600">Projects</span>
+          </h2>
+          <p class="mt-3 text-sm text-neutral-400 max-w-xl font-light">
+            Production systems, cross-platform neural agents, and interactive speech ecosystems captured across live responsive devices.
+          </p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-semibold tab-active text-white border border-white/10 transition-all shadow-lg" data-filter="all" onclick="filterProjects('all')">All Work</button>
+          <button class="project-filter-btn px-5 py-2 rounded-full bg-obsidian-850 text-xs font-semibold text-neutral-400 hover:text-white border border-white/10 transition-all shadow-lg" data-filter="web" onclick="filterProjects('web')">Web</button>
+          <button class="project-filter-btn px-5 py-2 rounded-full bg-obsidian-850 text-xs font-semibold text-neutral-400 hover:text-white border border-white/10 transition-all shadow-lg" data-filter="mobile" onclick="filterProjects('mobile')">Mobile</button>
+          <button class="project-filter-btn px-5 py-2 rounded-full bg-obsidian-850 text-xs font-semibold text-neutral-400 hover:text-white border border-white/10 transition-all shadow-lg" data-filter="aiml" onclick="filterProjects('aiml')">AI &amp; ML</button>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- CATEGORY 1: WEB DEVELOPMENT (FLAGSHIP EDITORIAL DUO SHOWCASE) -->
+      <!-- ============================================================== -->
+      <div class="project-category-block space-y-24 mb-24" data-category="web" id="web">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-crimson-500/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 font-mono text-sm font-bold shadow-inner">W</div>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">Web Applications</h3>
+          <span class="h-[1px] flex-1 bg-gradient-to-r from-white/15 via-crimson-500/20 to-transparent ml-4"></span>
+        </div>
+
+        <!-- Web 1: Therapy Nest (Web App + Mobile) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Mockup Duo Stage (Left) -->
+          <div class="lg:col-span-7 relative order-1 lg:order-1 flex items-center justify-center pt-8 pb-10">
+            <div class="absolute -top-10 -left-10 w-96 h-96 bg-crimson-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Laptop Mockup -->
+            <div class="relative w-full max-w-[540px] z-10">
+              <div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3a3a44] rounded-full ring-1 ring-black"></div>
+                <div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col">
+                  <!-- Browser Bar -->
+                  <div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5">
+                      <span class="text-emerald-400">https://</span>therapy-nest-web.vercel.app
+                    </div>
+                    <span class="text-[9px] text-neutral-500 font-mono">VERCEL</span>
+                  </div>
+                  <!-- Real In-Screen Web UI Image -->
+                  <div class="relative w-full flex-1 overflow-hidden bg-obsidian-950">
+                    <img alt="Therapy Nest Web Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/therapy-nest-web.png">
+                  </div>
+                </div>
+              </div>
+              <div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center">
+                <div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div>
+              </div>
+            </div>
+
+            <!-- Overlapping Mobile Mockup -->
+            <div class="absolute -right-2 sm:right-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[-2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300">
+              <div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col">
+                <!-- Real Mobile App Screenshot -->
+                <div class="relative w-full h-full overflow-hidden bg-obsidian-950">
+                  <img alt="Therapy Nest Mobile Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/therapy-nest-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metadata & Tech Badges (Right) -->
+          <div class="lg:col-span-5 order-2 lg:order-2 space-y-5">
+            <div>
+              <span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">
+                Therapy Nest
+              </span>
+              <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                Speech &amp; Cognitive Therapy Platform — Web &amp; Mobile Ecosystem
+              </h3>
+            </div>
+            <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+              Therapy Nest required an offline-first clinical rehabilitation architecture capable of delivering accurate on-device speech recognition, cognitive exercises, and mathematical IRT psychometric difficulty modeling with zero cloud latency. Developed both a Vercel-hosted offline-ready web application and a Flutter cross-platform companion with SQLite and FastAPI synchronization.
+            </p>
+            <div>
+              <div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">
+                TECHNOLOGY STACK
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">HTML5 / CSS3 / JS</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Flutter &amp; Dart</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Vosk ASR</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">2PL IRT Algorithm</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">SQLite / Drift</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">FastAPI</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Supabase</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 pt-3">
+              <a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://therapy-nest-web.vercel.app" rel="noopener noreferrer" target="_blank">
+                Launch Live App
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+              <a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+                GitHub Repository
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web 2: ConverterNest (Flipped Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Metadata (Left) -->
+          <div class="lg:col-span-5 order-2 lg:order-1 space-y-5">
+            <div>
+              <span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">
+                ConverterNest
+              </span>
+              <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                High-Velocity Media &amp; File Engine — Unified Desktop &amp; Mobile
+              </h3>
+            </div>
+            <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+              ConverterNest was engineered to provide instant, privacy-focused file conversion across audio, video, document, and image extensions without transmitting user data to third-party servers. Features an optimized on-device FFmpeg compilation inside Flutter paired with a lightning-fast Web API converter portal.
+            </p>
+            <div>
+              <div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">
+                TECHNOLOGY STACK
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Flutter &amp; Dart</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">FFmpeg Core</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Hive Local DB</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">MVVM Architecture</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Web APIs</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Vercel Deploy</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 pt-3">
+              <a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://converter-nest-web.vercel.app/" rel="noopener noreferrer" target="_blank">
+                Launch App
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+              <a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR/ConverterNest" rel="noopener noreferrer" target="_blank">
+                View Repository
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mockup Duo Stage (Right) -->
+          <div class="lg:col-span-7 relative order-1 lg:order-2 flex items-center justify-center pt-8 pb-10">
+            <div class="absolute -top-10 -right-10 w-96 h-96 bg-amberAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Laptop Mockup -->
+            <div class="relative w-full max-w-[540px] z-10">
+              <div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative">
+                <div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col">
+                  <div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5">
+                      <span class="text-emerald-400">https://</span>converter-nest-web.vercel.app
+                    </div>
+                    <span class="text-[9px] text-neutral-500 font-mono">UTILITY</span>
+                  </div>
+                  <!-- Real In-Screen Web UI Image -->
+                  <div class="relative w-full flex-1 overflow-hidden bg-obsidian-950">
+                    <img alt="ConverterNest Web Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/converter-nest-web.png">
+                  </div>
+                </div>
+              </div>
+              <div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center">
+                <div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div>
+              </div>
+            </div>
+
+            <!-- Overlapping Mobile Mockup -->
+            <div class="absolute -left-2 sm:left-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300">
+              <div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col">
+                <!-- Real Mobile App Screenshot -->
+                <div class="relative w-full h-full overflow-hidden bg-obsidian-950">
+                  <img alt="ConverterNest Mobile Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/converter-nest-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web 3: Capital Journeys -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Mockup Stage (Left) -->
+          <div class="lg:col-span-7 relative order-1 lg:order-1 flex items-center justify-center pt-8 pb-10">
+            <div class="relative w-full max-w-[540px] z-10">
+              <div class="laptop-frame bg-[#0d0d10] border-[6px] border-[#222227] rounded-t-xl pt-2.5 px-2 pb-0.5 shadow-2xl relative">
+                <div class="bg-[#0e1017] rounded-t-md overflow-hidden aspect-[16/10] border border-white/10 flex flex-col">
+                  <div class="h-6 bg-[#181920] border-b border-white/10 px-3 flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                      <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-[#0c0d12] px-3 py-0.5 rounded text-[9px] font-mono text-neutral-400 border border-white/5">
+                      <span class="text-emerald-400">https://</span>codewith-ar.github.io/capital-journeys
+                    </div>
+                    <span class="text-[9px] text-neutral-500 font-mono">EXPEDITION</span>
+                  </div>
+                  <!-- Real In-Screen Web UI Image -->
+                  <div class="relative w-full flex-1 overflow-hidden bg-obsidian-950">
+                    <img alt="Capital Journeys Web Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/capital-journey-web.png">
+                  </div>
+                </div>
+              </div>
+              <div class="laptop-base-chassis h-3 w-[108%] -ml-[4%] rounded-b-md relative flex justify-center items-center">
+                <div class="w-16 h-1 rounded-t-sm laptop-base-lip"></div>
+              </div>
+            </div>
+
+            <!-- Overlapping Mobile Mockup -->
+            <div class="absolute -right-2 sm:right-2 -bottom-6 w-36 sm:w-44 z-20 phone-frame bg-[#141419] rounded-[2.2rem] p-1.5 border-[3px] border-[#303038] transform rotate-[-2deg] transition-transform hover:rotate-0 hover:scale-105 duration-300">
+              <div class="relative bg-black rounded-[1.8rem] overflow-hidden aspect-[9/19] border border-white/10 flex flex-col">
+                <!-- Real Mobile App Screenshot -->
+                <div class="relative w-full h-full overflow-hidden bg-obsidian-950">
+                  <img alt="Capital Journeys Mobile Application" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/capital-journey-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metadata (Right) -->
+          <div class="lg:col-span-5 order-2 lg:order-2 space-y-5">
+            <div>
+              <span class="text-amberAccent text-xl sm:text-2xl font-bold font-display tracking-tight block mb-1">
+                Capital Journeys
+              </span>
+              <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                Responsive Travel &amp; High-Velocity Tourism Platform
+              </h3>
+            </div>
+            <p class="text-neutral-300 text-sm sm:text-base leading-relaxed font-light">
+              Responsive travel and tourism website featuring destination exploration, immersive travel information, and dynamic tour packages with fluid viewport grid routing and interactive destination booking analytics.
+            </p>
+            <div>
+              <div class="text-[11px] font-mono tracking-widest text-neutral-400 uppercase font-semibold mb-3">
+                TECHNOLOGY STACK
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Next.js / React</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">TailwindCSS</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Mapbox GL</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Node API</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Supabase</span>
+                <span class="glass-pill px-3 py-1.5 rounded-full text-xs font-mono text-neutral-200">Vercel Deploy</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 pt-3">
+              <a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all shadow-lg shadow-crimson-500/25 flex items-center gap-1.5" href="https://codewith-ar.github.io/capital-journeys-website/" rel="noopener noreferrer" target="_blank">
+                Explore Tour
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+              <a class="text-xs font-medium px-4 py-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 text-neutral-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1.5" href="https://github.com/CodeWith-AR/capital-journeys-website" rel="noopener noreferrer" target="_blank">
+                GitHub Repository
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- CATEGORY 2: MOBILE APPLICATIONS (REALISTIC SMARTPHONE FRAMES) -->
+      <!-- ============================================================== -->
+      <div class="project-category-block space-y-12 mb-28" data-category="mobile" id="mobile">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-crimson-500/20 border border-crimson-500/40 flex items-center justify-center text-crimson-400 font-mono text-sm font-bold shadow-inner">M</div>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">Mobile Applications</h3>
+          <span class="h-[1px] flex-1 bg-gradient-to-r from-white/15 via-crimson-500/20 to-transparent ml-4"></span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project M1: Therapy Nest Flutter -->
+          <div class="device-bento-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 justify-between group">
+            <div class="flex-1 flex flex-col-reverse md:flex-col justify-between order-2 md:order-1">
+              <div class="pt-4 md:pt-0">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[11px] font-mono text-crimson-400 uppercase tracking-widest font-semibold">SPEECH REHABILITATION</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-crimson-500/20 text-crimson-300 font-mono border border-crimson-500/30">FLUTTER + RENDER</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold font-display text-goldAccent group-hover:text-amberAccent transition-colors tracking-tight mb-2">
+                  Therapy Nest — Speech &amp; Cognitive Therapy Platform
+                </h4>
+                <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed">Flutter, Supabase, Sqflite, FastAPI, 2PL IRT, Vosk ASR, Jaro-Winkler, Python</p>
+                <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                  Offline-first mobile platform with on-device speech recognition, interactive therapy exercises, accessibility features, and 2PL IRT-based difficulty visualization.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 mb-0 md:mb-6">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Flutter</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Supabase</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">FastAPI</span>
+                </div>
+              </div>
+              <div class="pt-0 md:pt-4 pb-4 md:pb-0 border-b md:border-b-0 md:border-t border-white/10">
+                <a class="text-xs font-semibold px-4 py-2 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all btn-glow-crimson inline-flex items-center gap-1.5" href="https://github.com/CodeWith-AR/Therapy-Nest-Web" rel="noopener noreferrer" target="_blank">
+                  View Repository
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <!-- Smartphone Floating Mockup -->
+            <div class="w-48 sm:w-56 mx-auto md:mx-0 flex-shrink-0 flex items-center justify-center order-1 md:order-2">
+              <div class="mobile-mockup-tilt w-full aspect-[9/18.5] bg-[#0c0c0e] rounded-[36px] p-2.5 border-[3px] border-[#2b2a30] shadow-2xl relative">
+                <div class="w-full h-full bg-[#141318] rounded-[28px] overflow-hidden relative">
+                  <img alt="Therapy Nest Flutter Mobile App" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/therapy-nest-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project M2: ConverterNest Mobile -->
+          <div class="device-bento-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 justify-between group">
+            <div class="flex-1 flex flex-col-reverse md:flex-col justify-between order-2 md:order-1">
+              <div class="pt-4 md:pt-0">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[11px] font-mono text-crimson-400 uppercase tracking-widest font-semibold">MEDIA &amp; FILE ENGINE</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-white/10 text-neutral-300 font-mono border border-white/5">ON-DEVICE FFMPEG</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold font-display text-goldAccent group-hover:text-amberAccent transition-colors tracking-tight mb-2">
+                  ConverterNest — File Conversion App
+                </h4>
+                <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed">Flutter, Hive, FFmpeg, MVVM</p>
+                <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                  Local file conversion application supporting multiple formats with simple UI and privacy-focused on-device processing.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 mb-0 md:mb-6">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Flutter</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Hive DB</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">FFmpeg</span>
+                </div>
+              </div>
+              <div class="pt-0 md:pt-4 pb-4 md:pb-0 border-b md:border-b-0 md:border-t border-white/10">
+                <a class="text-xs font-semibold px-4 py-2 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all btn-glow-crimson inline-flex items-center gap-1.5" href="https://github.com/CodeWith-AR/ConverterNest" rel="noopener noreferrer" target="_blank">
+                  View Repository
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <div class="w-48 sm:w-56 mx-auto md:mx-0 flex-shrink-0 flex items-center justify-center order-1 md:order-2">
+              <div class="mobile-mockup-tilt w-full aspect-[9/18.5] bg-[#0c0c0e] rounded-[36px] p-2.5 border-[3px] border-[#2b2a30] shadow-2xl relative">
+                <div class="w-full h-full bg-[#121217] rounded-[28px] overflow-hidden relative">
+                  <img alt="ConverterNest Mobile App" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/converter-nest-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project M3: Post-Stroke Speech Therapy -->
+          <div class="device-bento-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 justify-between group">
+            <div class="flex-1 flex flex-col-reverse md:flex-col justify-between order-2 md:order-1">
+              <div class="pt-4 md:pt-0">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[11px] font-mono text-crimson-400 uppercase tracking-widest font-semibold">HEALTHCARE AI</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-white/10 text-neutral-300 font-mono border border-white/5">TENSORFLOW + FIREBASE</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold font-display text-goldAccent group-hover:text-amberAccent transition-colors tracking-tight mb-2">
+                  Post-Stroke Speech Therapy Application
+                </h4>
+                <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed">Flutter, Firebase, Python, TensorFlow, Speech Processing</p>
+                <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                  Speech therapy app designed for post-stroke speech rehabilitation through interactive exercises, speech analysis, and progress tracking.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 mb-0 md:mb-6">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Flutter</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">TensorFlow</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Firebase</span>
+                </div>
+              </div>
+              <div class="pt-0 md:pt-4 pb-4 md:pb-0 border-b md:border-b-0 md:border-t border-white/10">
+                <a class="text-xs font-semibold px-4 py-2 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all btn-glow-crimson inline-flex items-center gap-1.5" href="https://github.com/CodeWith-AR/Post-Stroke-Speech-Therapy" rel="noopener noreferrer" target="_blank">
+                  View Repository
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <div class="w-48 sm:w-56 mx-auto md:mx-0 flex-shrink-0 flex items-center justify-center order-1 md:order-2">
+              <div class="mobile-mockup-tilt w-full aspect-[9/18.5] bg-[#0c0c0e] rounded-[36px] p-2.5 border-[3px] border-[#2b2a30] shadow-2xl relative">
+                <div class="w-full h-full bg-[#151319] rounded-[28px] overflow-hidden relative">
+                  <img alt="Post-Stroke Speech Therapy Mobile App" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/post-stroke-mobile.jpeg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project M4: QR Product Registration -->
+          <div class="device-bento-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 justify-between group">
+            <div class="flex-1 flex flex-col-reverse md:flex-col justify-between order-2 md:order-1">
+              <div class="pt-4 md:pt-0">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[11px] font-mono text-crimson-400 uppercase tracking-widest font-semibold">INVENTORY SYSTEM</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-white/10 text-neutral-300 font-mono border border-white/5">QR SCANNER</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold font-display text-goldAccent group-hover:text-amberAccent transition-colors tracking-tight mb-2">
+                  QR Product Registration &amp; Tracking App
+                </h4>
+                <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed">Flutter, Dart, Firebase, Mobile Scanner, Shared Preferences</p>
+                <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                  Flutter mobile application for QR-based product registration, product management, expiry tracking, and reminder settings.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 mb-0 md:mb-6">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Flutter</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Firebase</span>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-850 border border-white/10 text-xs font-mono text-neutral-300">Scanner</span>
+                </div>
+              </div>
+              <div class="pt-0 md:pt-4 pb-4 md:pb-0 border-b md:border-b-0 md:border-t border-white/10">
+                <a class="text-xs font-semibold px-4 py-2 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all btn-glow-crimson inline-flex items-center gap-1.5" href="https://github.com/CodeWith-AR/QR-Product-Registration-App" rel="noopener noreferrer" target="_blank">
+                  View Repository
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+            <div class="w-48 sm:w-56 mx-auto md:mx-0 flex-shrink-0 flex items-center justify-center order-1 md:order-2">
+              <div class="mobile-mockup-tilt w-full aspect-[9/18.5] bg-[#0c0c0e] rounded-[36px] p-2.5 border-[3px] border-[#2b2a30] shadow-2xl relative">
+                <div class="w-full h-full bg-[#111116] rounded-[28px] overflow-hidden relative">
+                  <img alt="QR Product Registration &amp; Tracking App" class="w-full h-full object-cover object-top" loading="lazy" src="assets/images/projects/qr-product-registration.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- CATEGORY 3: AI & MACHINE LEARNING (TELEMETRY NEURAL DECKS)    -->
+      <!-- ============================================================== -->
+      <div class="project-category-block space-y-12 mb-20" data-category="aiml" id="aiml">
+        <div class="flex items-center gap-3.5 mb-8">
+          <div class="w-9 h-9 rounded-xl bg-amberAccent/20 border border-amberAccent/40 flex items-center justify-center text-amberAccent font-mono text-sm font-bold shadow-[0_0_15px_rgba(233,195,73,0.25)]">
+            AI
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold font-display text-white tracking-wide">AI &amp; Machine Learning</h3>
+          <span class="h-[1px] flex-1 bg-gradient-to-r from-amberAccent/40 via-white/15 to-transparent ml-3"></span>
+          <span class="text-xs font-mono text-amberAccent tracking-widest uppercase hidden sm:block">Neural Lab // Telemetry Deck</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <!-- AI 1: BiGRU Word Count -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-obsidian-900 via-obsidian-900/90 to-obsidian-950 border border-white/10 backdrop-blur-xl relative group hover:border-amberAccent/40 transition-all duration-500 flex flex-col justify-between shadow-2xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono text-amberAccent uppercase tracking-widest bg-amberAccent/10 px-3 py-1 rounded-md border border-amberAccent/20">
+                  NEURAL AUDIO RECOGNITION
+                </span>
+                <span class="px-2.5 py-1 rounded text-[11px] bg-white/5 text-neutral-300 font-mono border border-white/10 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amberAccent animate-ping"></span> TFLITE
+                </span>
+              </div>
+              <h4 class="text-2xl font-bold font-display text-white group-hover:text-amberAccent transition-colors mb-2">
+                Speech Word Count Prediction using BiGRU &amp; TensorFlow
+              </h4>
+              <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed bg-obsidian-950/80 p-3 rounded-xl border border-white/5">
+                Python, TensorFlow/Keras, Librosa, NumPy, Pandas, Scikit-learn
+              </p>
+              <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                Deep learning model to predict spoken word counts from audio using MFCC-based features and Bidirectional GRU network.
+              </p>
+
+              <!-- BiGRU Architecture Diagram Showcase -->
+              <div class="rounded-2xl bg-obsidian-950/90 border border-white/10 p-4 space-y-4 mb-6 shadow-inner">
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 border-b border-white/5 pb-2.5">
+                  <span class="flex items-center gap-2 text-amberAccent font-semibold">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5v14M7 9v6M2 11v2M22 11v2"></path></svg>
+                    BiGRU + ANN Neural Architecture
+                  </span>
+                  <span class="text-[10px] font-mono text-neutral-400 bg-obsidian-900 px-2 py-0.5 rounded border border-white/5">DIAGRAM SPEC</span>
+                </div>
+                <!-- Real Architecture Image Frame -->
+                <div class="w-full bg-white rounded-xl p-2.5 sm:p-3 overflow-hidden shadow-md flex items-center justify-center border border-white/10 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-shadow">
+                  <img alt="BiGRU Neural Network Architecture with TensorFlow and Keras" class="w-full h-auto max-h-[190px] object-contain rounded-lg" loading="lazy" src="assets/images/projects/bigru-tensorflow.jpg">
+                </div>
+                <!-- Model Metrics -->
+                <div class="grid grid-cols-3 gap-2 pt-1 text-center font-mono">
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[9px] text-neutral-400">MAE LOSS</div>
+                    <div class="text-xs font-bold text-emerald-400">0.048</div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[9px] text-neutral-400">EPOCHS</div>
+                    <div class="text-xs font-bold text-amberAccent">80 Stopped</div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[9px] text-neutral-400">TFLITE SIZE</div>
+                    <div class="text-xs font-bold text-crimson-400">1.8 MB</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+              <a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all duration-300 btn-glow-crimson inline-flex items-center gap-2" href="https://github.com/CodeWith-AR/Speech-Word-Count-Prediction-using-BiGRU-TensorFlow-TFLite-" rel="noopener noreferrer" target="_blank">
+                Explore Code
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- AI 2: Cyber Attack Detection -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-obsidian-900 via-obsidian-900/90 to-obsidian-950 border border-white/10 backdrop-blur-xl relative group hover:border-crimson-500/50 transition-all duration-500 flex flex-col justify-between shadow-2xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono text-crimson-400 uppercase tracking-widest bg-crimson-500/10 px-3 py-1 rounded-md border border-crimson-500/20">
+                  NETWORK SECURITY IDS
+                </span>
+                <span class="px-2.5 py-1 rounded text-[11px] bg-white/5 text-neutral-300 font-mono border border-white/10 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-crimson-500 animate-pulse"></span> RANDOM FOREST
+                </span>
+              </div>
+              <h4 class="text-2xl font-bold font-display text-white group-hover:text-crimson-400 transition-colors mb-2">
+                Machine Learning Based Cyber-Attack Detection System
+              </h4>
+              <p class="text-xs text-amberAccent font-mono mb-4 leading-relaxed bg-obsidian-950/80 p-3 rounded-xl border border-white/5">
+                Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
+              </p>
+              <p class="text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                Intrusion detection system to classify network traffic as normal or malicious using NSL-KDD dataset and Random Forest classifier.
+              </p>
+
+              <!-- IDS Architecture Diagram Showcase -->
+              <div class="rounded-2xl bg-obsidian-950/90 border border-white/10 p-4 space-y-4 mb-6 shadow-inner">
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 border-b border-white/5 pb-2.5">
+                  <span class="flex items-center gap-2 text-crimson-400 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-crimson-500 animate-ping"></span>
+                    Network Intrusion Detection System Topology
+                  </span>
+                  <span class="text-[10px] font-mono text-emerald-400 bg-obsidian-900 px-2 py-0.5 rounded border border-white/5">IDS: ACTIVE</span>
+                </div>
+                <!-- Real Architecture Image Frame -->
+                <div class="w-full bg-white rounded-xl p-2.5 sm:p-3 overflow-hidden shadow-md flex items-center justify-center border border-white/10 group-hover:shadow-[0_0_20px_rgba(229,9,20,0.2)] transition-shadow">
+                  <img alt="Machine Learning Intrusion Detection System Network Topology" class="w-full h-auto max-h-[190px] object-contain rounded-lg" loading="lazy" src="assets/images/projects/ml-intrusion-detection.png">
+                </div>
+                <!-- Benchmark Metrics -->
+                <div class="grid grid-cols-4 gap-2 pt-1 text-center font-mono">
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[8px] text-neutral-400">ACCURACY</div>
+                    <div class="text-xs font-bold text-emerald-400">99.4%</div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[8px] text-neutral-400">F1-SCORE</div>
+                    <div class="text-xs font-bold text-amberAccent">0.992</div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[8px] text-neutral-400">TREES</div>
+                    <div class="text-xs font-bold text-white">100 RF</div>
+                  </div>
+                  <div class="p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                    <div class="text-[8px] text-neutral-400">LATENCY</div>
+                    <div class="text-xs font-bold text-cyan-400">&lt;1.2ms</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+              <a class="text-xs font-semibold px-5 py-2.5 rounded-full bg-crimson-500 hover:bg-crimson-600 text-white transition-all duration-300 btn-glow-crimson inline-flex items-center gap-2" href="https://github.com/CodeWith-AR/MachineLearning-Intrusion-Detection-System" rel="noopener noreferrer" target="_blank">
+                Explore Code
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. HONOURS & AWARDS (CERTIFICATIONS 3D COVERFLOW CAROUSEL)                -->
+  <!-- ========================================================================= -->
+  <section class="relative min-h-screen w-full flex flex-col justify-between py-0 bg-obsidian-950 cyber-grid overflow-hidden border-b border-white/10" id="certifications">
+    <!-- Top Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-b border-white/5 film-sprocket flex-shrink-0 relative z-10"></div>
+
+    <!-- Interactive Mouse Spotlight & Ambient Radial Beam (Hero Style) -->
+    <div id="cert-spotlight" class="interactive-spotlight-layer"></div>
+    <div id="cert-spotlight-grid" class="hero-spotlight-grid"></div>
+    <div class="hero-radial-beam"></div>
+    <div class="hero-radial-beam-secondary"></div>
+
+    <!-- Crimson Radial Background Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-crimson-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10 w-full py-20 sm:py-24 my-auto">
+      <!-- Header with Ribbon Badge Icon -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 mb-2 text-center">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-crimson-500/20 border border-crimson-500/40 flex items-center justify-center text-crimson-500 shrink-0 shadow-[0_0_12px_rgba(229,9,20,0.3)] mx-auto sm:mx-0">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <circle cx="12" cy="9" fill="none" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+            <circle cx="12" cy="9" fill="currentColor" r="3"></circle>
+            <path d="M8.5 14.5L7 22l5-2 5 2-1.5-7.5" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
+          </svg>
+        </div>
+        <h2 class="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white text-center">
+          Certifications &amp; Honours
+        </h2>
+      </div>
+      <p class="text-neutral-400 text-xs sm:text-sm mb-10 sm:mb-12 font-light text-center max-w-md mx-auto">Accredited technical qualifications &amp; academic recognitions</p>
+
+      <!-- 3D Coverflow Perspective Viewport -->
+      <div class="perspective-container relative h-[480px] sm:h-[520px] flex items-center justify-center max-w-4xl mx-auto">
+        <!-- Cert Slide 0: Saylor ML -->
+        <div class="cert-slide active absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-crimson-500/50 shadow-2xl flex flex-col justify-between" data-cert-index="0">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('Saylor University', 'Fundamentals of Machine Learning', '7982816099AR', '06/08/2026', 'https://www.saylor.org/', 'assets/images/certs/saylor-ml.jpeg')">
+            <img src="assets/images/certs/saylor-ml.jpeg" alt="Saylor University - Fundamentals of Machine Learning" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">Saylor University</span>
+              <span class="text-amberAccent shrink-0">06/08/2026</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">Saylor University</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">CREDENTIAL</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Fundamentals of Machine Learning</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: 7982816099AR</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(229,9,20,0.4)] transition-all cursor-pointer" onclick="showCertModal('Saylor University', 'Fundamentals of Machine Learning', '7982816099AR', '06/08/2026', 'https://www.saylor.org/', 'assets/images/certs/saylor-ml.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert Slide 1: Kodex Byte -->
+        <div class="cert-slide next-1 absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="1">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('Kodex Byte', 'Mobile App Development Internship', 'KB-EXP-2026-2273', '10/07/2026', 'https://github.com/CodeWith-AR', 'assets/images/certs/kodex-byte.jpeg')">
+            <img src="assets/images/certs/kodex-byte.jpeg" alt="Kodex Byte - Mobile App Development Internship" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">Kodex Byte</span>
+              <span class="text-amberAccent shrink-0">10/07/2026</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">Kodex Byte</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">INTERNSHIP</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Mobile App Development Internship</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: KB-EXP-2026-2273</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer" onclick="showCertModal('Kodex Byte', 'Mobile App Development Internship', 'KB-EXP-2026-2273', '10/07/2026', 'https://github.com/CodeWith-AR', 'assets/images/certs/kodex-byte.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert Slide 2: Financial Training Institute -->
+        <div class="cert-slide next-2 absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="2">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('Financial Training Institute', 'Advance IT Specialization', 'A02462', '20/07/2019', 'https://github.com/CodeWith-AR', 'assets/images/certs/financial-training.jpeg')">
+            <img src="assets/images/certs/financial-training.jpeg" alt="Financial Training Institute - Advance IT Specialization" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">Financial Training Inst.</span>
+              <span class="text-amberAccent shrink-0">20/07/2019</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">Financial Training Institute</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">SPECIALIZATION</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Advance IT Specialization</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Certificate ID: A02462</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer" onclick="showCertModal('Financial Training Institute', 'Advance IT Specialization', 'A02462', '20/07/2019', 'https://github.com/CodeWith-AR', 'assets/images/certs/financial-training.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert Slide 3: NumLogic - Quiz Competition (NEW!) -->
+        <div class="cert-slide hidden-cert absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="3">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('National University of Modern Languages', 'NumLogic — Quiz Competition', 'NUMLOGIC-2024-QC', '23/04/2024', 'https://numl.edu.pk/', 'assets/images/certs/numlogic-quiz.jpeg')">
+            <img src="assets/images/certs/numlogic-quiz.jpeg" alt="NumLogic Quiz Competition Certificate - NUML CS Dept" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">NumLogic — 2024</span>
+              <span class="text-amberAccent shrink-0">23/04/2024</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">NumLogic — Quiz Competition</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">COMPETITION</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Certificate of Participation in NUMlogic - 2024</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Accreditation: NUML CS Dept</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer" onclick="showCertModal('National University of Modern Languages', 'NumLogic — Quiz Competition', 'NUMLOGIC-2024-QC', '23/04/2024', 'https://numl.edu.pk/', 'assets/images/certs/numlogic-quiz.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert Slide 4: NUML CS Open House -->
+        <div class="cert-slide prev-2 absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="4">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('National University of Modern Languages', 'Open House Certificate of Participation', 'NUML-OH-2026', '08/06/2026', 'https://numl.edu.pk/', 'assets/images/certs/numl-open-house.jpeg')">
+            <img src="assets/images/certs/numl-open-house.jpeg" alt="NUML CS Open House Certificate" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">NUML Open House</span>
+              <span class="text-amberAccent shrink-0">08/06/2026</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">NUML CS Open House</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">HONOUR</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Open House Certificate of Participation</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Accreditation: NUML CS Dept</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer" onclick="showCertModal('National University of Modern Languages', 'Open House Certificate of Participation', 'NUML-OH-2026', '08/06/2026', 'https://numl.edu.pk/', 'assets/images/certs/numl-open-house.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert Slide 5: PMYP Laptop Scheme Award -->
+        <div class="cert-slide prev-1 absolute w-80 sm:w-[380px] p-5 rounded-2xl bg-obsidian-900 border border-white/10 shadow-2xl flex flex-col justify-between" data-cert-index="5">
+          <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-black/60 border border-white/10 group/img flex items-center justify-center cursor-pointer shadow-inner" onclick="showCertModal('Prime Minister\'s Youth Program', 'Laptop Award for Academic Excellence', 'PMYP-NUML-2025', '09/12/2025', 'https://laptop.pmyp.gov.pk/', 'assets/images/certs/pmyp-laptop.jpeg')">
+            <img src="assets/images/certs/pmyp-laptop.jpeg" alt="Prime Minister's Youth Program Merit Laptop Award" class="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-transform duration-500 group-hover/img:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/90 via-transparent to-black/20 pointer-events-none"></div>
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-obsidian-900/90 border border-white/15 text-[10px] font-mono text-amberAccent flex items-center gap-1 backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+            </div>
+            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300">
+              <span class="truncate font-semibold text-white">PMYP Laptop Award</span>
+              <span class="text-amberAccent shrink-0">09/12/2025</span>
+            </div>
+          </div>
+          <div class="mt-3.5 text-left">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white font-display">Prime Minister's Youth Program</h4>
+              <span class="text-[10px] font-mono text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">MERIT AWARD</span>
+            </div>
+            <p class="text-xs text-neutral-300 mt-0.5 font-light">Laptop Award for Academic Excellence (NUML)</p>
+            <p class="text-[11px] text-crimson-400 font-mono mt-1">Official Registry: Verified Merit</p>
+          </div>
+          <button class="mt-4 w-full py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer" onclick="showCertModal('Prime Minister\'s Youth Program', 'Laptop Award for Academic Excellence', 'PMYP-NUML-2025', '09/12/2025', 'https://laptop.pmyp.gov.pk/', 'assets/images/certs/pmyp-laptop.jpeg')">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><line x1="9" x2="15" y1="8" y2="8"></line><line x1="9" x2="15" y1="12" y2="12"></line><line x1="9" x2="13" y1="16" y2="16"></line></svg>
+            View Certificate
+          </button>
+        </div>
+      </div>
+
+      <!-- Coverflow Navigation Buttons -->
+      <div class="flex items-center justify-center gap-5 mt-8">
+        <button aria-label="Previous certificate" class="w-12 h-12 rounded-full bg-obsidian-900 border border-white/15 hover:border-crimson-500/80 hover:bg-crimson-500/10 flex items-center justify-center text-neutral-300 hover:text-white transition-all shadow-md focus:outline-none cursor-pointer" onclick="prevCert()">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <div id="cert-indicators" class="flex items-center gap-2">
+          <span class="w-6 h-2 rounded-full bg-crimson-500 shadow-[0_0_8px_#e50914]" onclick="setCert(0)"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20" onclick="setCert(1)"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20" onclick="setCert(2)"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20" onclick="setCert(3)"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20" onclick="setCert(4)"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20" onclick="setCert(5)"></span>
+        </div>
+        <button aria-label="Next certificate" class="w-12 h-12 rounded-full bg-obsidian-900 border border-crimson-500 hover:border-crimson-400 bg-crimson-500/20 flex items-center justify-center text-white transition-all shadow-[0_0_20px_rgba(229,9,20,0.45)] focus:outline-none cursor-pointer" onclick="nextCert()">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Sprocket Track -->
+    <div class="h-3.5 w-full bg-obsidian-900 border-t border-white/5 film-sprocket flex-shrink-0 relative z-10"></div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CERTIFICATE VERIFICATION MODAL                                            -->
+  <!-- ========================================================================= -->
+  <div class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4" id="cert-modal">
+    <div class="glass-card max-w-xl w-full rounded-3xl p-6 sm:p-7 border border-crimson-500/40 relative shadow-[0_0_50px_rgba(229,9,20,0.35)] max-h-[92vh] overflow-y-auto">
+      <button class="absolute top-5 right-5 text-neutral-400 hover:text-white p-1 rounded-lg focus:outline-none cursor-pointer z-20" onclick="closeCertModal()">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+      </button>
+
+      <!-- Modal Certificate Image Lightbox -->
+      <div id="modal-cert-image-container" class="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden bg-black/90 border border-white/10 mb-5 flex items-center justify-center group/modalimg shadow-inner">
+        <img id="modal-cert-image" src="" alt="Certificate Preview" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover/modalimg:scale-[1.02]">
+        <a id="modal-full-img-btn" href="#" target="_blank" class="absolute bottom-2.5 right-2.5 px-3 py-1.5 rounded-lg bg-obsidian-900/95 hover:bg-crimson-600 text-white text-[11px] font-mono border border-white/20 transition-all flex items-center gap-1.5 shadow-lg backdrop-blur-md">
+          <span>Open Full Image</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-10 h-10 rounded-xl bg-crimson-500/20 text-crimson-400 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-mono text-crimson-400 uppercase tracking-wider block">VERIFIED CREDENTIAL</span>
+          <h3 class="text-lg sm:text-xl font-bold font-display text-white" id="modal-title">Certificate Title</h3>
+        </div>
+      </div>
+      <p class="text-xs text-neutral-300" id="modal-issuer">Issuer Name</p>
+
+      <div class="bg-obsidian-850 rounded-2xl p-3.5 mt-4 space-y-2 border border-white/5 font-mono text-xs">
+        <div class="flex justify-between">
+          <span class="text-neutral-400">Credential ID:</span>
+          <span class="text-amberAccent" id="modal-id">ID-0000000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-neutral-400">Issue Date:</span>
+          <span class="text-neutral-200" id="modal-date">00/00/0000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-neutral-400">Verification Status:</span>
+          <span class="text-emerald-400 flex items-center gap-1">● Authenticated</span>
+        </div>
+      </div>
+
+      <div class="mt-5 flex gap-3">
+        <button class="flex-1 py-2.5 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 text-neutral-200 text-xs font-semibold border border-white/10 transition-colors cursor-pointer" onclick="closeCertModal()">
+          Dismiss
+        </button>
+        <a id="modal-verify-btn" class="flex-1 py-2.5 rounded-xl bg-crimson-500 hover:bg-crimson-600 text-white text-xs font-semibold text-center transition-colors shadow-lg flex items-center justify-center gap-1.5" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+          <span>Verify Online</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 6. GET IN TOUCH & FOOTER CONCLUSION (STITCH V1 SPEC)                       -->
+  <!-- ========================================================================= -->
+  <footer class="relative border-t border-white/10 bg-obsidian-900/90 pt-20 pb-12 overflow-hidden min-h-screen" id="contact">
+    <!-- Ambient Flare -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-64 bg-crimson-600/15 blur-[100px] pointer-events-none rounded-full"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 w-full">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-500/10 border border-crimson-500/30 text-crimson-400 text-xs font-mono mb-3">
+          <span>LET'S CONNECT</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+          Let's Build Something <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson-400 via-crimson-500 to-crimson-600 text-glow-crimson">Together</span>
+        </h2>
+        <p class="text-neutral-400 text-sm sm:text-base mt-3">
+          Available for full-time software engineering roles, mobile apps, and machine learning applications.
+        </p>
+      </div>
+
+      <!-- Direct Contact Matrix Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+        <!-- Email Card -->
+        <div class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" onclick="copyEmail('mailrehman90527300@gmail.com')">
+          <div class="w-12 h-12 rounded-2xl bg-crimson-500/15 border border-crimson-500/30 flex items-center justify-center text-crimson-400 mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-crimson-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <h4 class="font-display font-bold text-white text-base mb-1">Direct Email</h4>
+          <p class="text-neutral-400 text-xs mb-3 font-mono">mailrehman90527300@gmail.com</p>
+          <span class="text-xs font-semibold text-crimson-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Send Message →
+          </span>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <a class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" href="https://linkedin.com/in/rehman90" rel="noopener noreferrer" target="_blank">
+          <div class="w-12 h-12 rounded-2xl bg-amberAccent/15 border border-amberAccent/30 flex items-center justify-center text-amberAccent mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-amberAccent" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.67 1.67 0 1 0 0-3.34 1.67 1.67 0 0 0 0 3.34m1.4 10.74v-8.37H5.06v8.37h2.8z"></path>
+            </svg>
+          </div>
+          <h4 class="font-display font-bold text-white text-base mb-1">LinkedIn Network</h4>
+          <p class="text-neutral-400 text-xs mb-3 font-mono">in/rehman90/</p>
+          <span class="text-xs font-semibold text-amberAccent flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Connect Profile →
+          </span>
+        </a>
+
+        <!-- GitHub Card -->
+        <a class="bento-card rounded-3xl p-6 flex flex-col items-center text-center group cursor-pointer" href="https://github.com/CodeWith-AR" rel="noopener noreferrer" target="_blank">
+          <div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h4 class="font-display font-bold text-white text-base mb-1">GitHub Repositories</h4>
+          <p class="text-neutral-400 text-xs mb-3 font-mono">github.com/CodeWith-AR</p>
+          <span class="text-xs font-semibold text-neutral-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            View Codebases →
+          </span>
+        </a>
+      </div>
+
+      <!-- Master Showcase Container: Laptop Screen & Direct Message Form -->
+      <div class="mb-20 rounded-3xl bg-radial from-neutral-900/60 to-obsidian-900 border border-white/10 p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-crimson-600/15 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-crimson-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <!-- Left Column: Realistic Laptop Mockup with Rehman image.png -->
+          <div class="lg:col-span-7 flex flex-col items-center justify-center">
+            <div class="relative w-full flex items-center justify-center lg:justify-start py-4 select-none">
+              <div class="absolute -left-10 bottom-6 w-80 h-48 bg-crimson-600/25 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+              <div class="absolute left-1/4 bottom-0 w-96 h-28 bg-black/90 blur-2xl pointer-events-none -z-10"></div>
+              <div class="relative w-full sm:ml-8 lg:ml-4 max-w-[500px] transition-transform duration-700 hover:scale-[1.015]">
+                <div class="relative rounded-[1.35rem] p-[8px] pb-[7px] bg-gradient-to-b from-[#35343d] via-[#1c1b22] to-[#0c0c0f] shadow-[0_28px_70px_-12px_rgba(0,0,0,0.98),inset_0_1px_1px_rgba(255,255,255,0.22)] border border-neutral-700/70">
+                  <div class="relative rounded-[0.95rem] overflow-hidden bg-[#040406] border border-black/90 shadow-inner ring-1 ring-white/10">
+                    <!-- Browser Bar -->
+                    <div class="h-6 bg-[#131217] border-b border-neutral-800/80 px-3 flex items-center justify-between z-30 relative select-none">
+                      <div class="flex items-center gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/90 border border-[#e0443e]/50"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/90 border border-[#dea123]/50"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/90 border border-[#1aab29]/50"></div>
+                      </div>
+                      <div class="absolute left-1/2 -translate-x-1/2 top-0 bg-[#070709] px-3.5 py-0.5 rounded-b-lg border-x border-b border-neutral-800 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#050507] ring-1 ring-neutral-700 flex items-center justify-center">
+                          <div class="w-0.5 h-0.5 rounded-full bg-crimson-500/80"></div>
+                        </div>
+                        <span class="text-[9px] font-mono text-neutral-400 tracking-wider">rehman.dev/workspace</span>
+                      </div>
+                    </div>
+                    <!-- Laptop Screen displaying Rehman image.png -->
+                    <div class="relative aspect-[16/10] overflow-hidden bg-[#050507]">
+                      <img src="assets/images/rehman-workspace.png" alt="Abdur Rehman Digital Workspace Showcase" class="w-full h-full object-cover object-top filter contrast-[1.08] brightness-[0.97]" loading="lazy">
+                      <div class="absolute inset-0 bg-gradient-to-tr from-black/70 via-transparent to-white/[0.08] pointer-events-none"></div>
+                      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none"></div>
+                      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_65%)] pointer-events-none"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Laptop Base Chassis -->
+                <div class="relative -mt-[1px] w-[105%] -left-[2.5%]">
+                  <div class="h-3 sm:h-3.5 bg-gradient-to-b from-[#32313b] via-[#212028] to-[#111115] rounded-b-xl border-t border-neutral-600/80 border-x border-neutral-700/60 shadow-[0_14px_30px_rgba(0,0,0,0.95),inset_0_1px_0_rgba(255,255,255,0.22)] flex flex-col items-center justify-between px-6 pt-0.5">
+                    <div class="w-24 sm:w-28 h-1 bg-[#09080c] rounded-b-md border-t border-neutral-700/50 shadow-inner"></div>
+                    <div class="w-20 sm:w-24 h-0.5 bg-neutral-700/40 rounded-full mb-0.5"></div>
+                  </div>
+                  <div class="h-1.5 sm:h-2 bg-gradient-to-b from-[#141419] to-black w-[97%] mx-auto rounded-b-2xl opacity-95 shadow-[0_4px_12px_rgba(0,0,0,0.8)]"></div>
+                </div>
+                <div class="w-[108%] -left-[4%] h-8 bg-black/90 blur-xl mx-auto rounded-full -mt-2 pointer-events-none -z-10"></div>
+                <div class="w-[75%] mx-auto h-4 bg-crimson-600/30 blur-lg rounded-full -mt-4 pointer-events-none -z-10"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Direct Transmission Message Form -->
+          <div class="lg:col-span-5 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-10">
+            <div class="flex items-center gap-2 text-crimson-400 font-mono text-xs mb-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+              <span>DIRECT TRANSMISSION</span>
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-2">Send a Direct Message</h3>
+            <p class="text-neutral-400 text-xs mb-6 font-mono leading-relaxed">Have an idea, project proposal, or employment opportunity? Transmit your query directly.</p>
+            <form id="portfolio-contact-form" class="space-y-4">
+              <div class="space-y-1">
+                <label for="contact-name" class="block text-[11px] font-mono uppercase tracking-wider text-neutral-400">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Jane Doe" required class="w-full bg-[#141418] border border-neutral-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-crimson-500 transition-colors font-sans">
+              </div>
+              <div class="space-y-1">
+                <label for="contact-email" class="block text-[11px] font-mono uppercase tracking-wider text-neutral-400">Email Address</label>
+                <input type="email" id="contact-email" placeholder="jane@example.com" required class="w-full bg-[#141418] border border-neutral-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-crimson-500 transition-colors font-sans">
+              </div>
+              <div class="space-y-1">
+                <label for="contact-message" class="block text-[11px] font-mono uppercase tracking-wider text-neutral-400">Message</label>
+                <textarea id="contact-message" rows="4" placeholder="Discuss an upcoming initiative, role, or technical collaboration..." required class="w-full bg-[#141418] border border-neutral-700/80 rounded-xl px-4 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-crimson-500 transition-colors font-sans resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-crimson-500 to-crimson-600 hover:from-crimson-400 hover:to-crimson-500 text-white font-mono text-xs font-bold tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(229,9,20,0.4)] flex items-center justify-center gap-2 group cursor-pointer">
+                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+                <span>DISPATCH TRANSMISSION</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Strip -->
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-400 text-xs">
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+          <a aria-label="Abdur Rehman Home" class="flex items-center gap-1 group focus:outline-none" href="#home">
+            <span class="font-display text-sm md:text-base font-bold tracking-wider text-white uppercase">
+              REHMAN<span class="inline-block w-1.5 h-1.5 rounded-full bg-crimson-500 ml-1 shadow-[0_0_8px_#e50914]"></span>
+            </span>
+          </a>
+          <span class="hidden sm:inline text-neutral-600">|</span>
+          <p>© <span id="current-year">2026</span> Abdur Rehman.</p>
+        </div>
+        <div class="flex items-center gap-6 font-mono text-xs">
+          <a class="hover:text-white transition-colors" href="#home">Back to top ↑</a>
+          <a class="hover:text-white transition-colors" href="#skills">Skills</a>
+          <a class="hover:text-white transition-colors" href="#projects">Projects</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script src="assets/js/domain-rotator.js"></script>
+  <script src="assets/js/project-filter.js"></script>
+  <script src="assets/js/cert-coverflow.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
