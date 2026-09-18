@@ -8,15 +8,26 @@ html {
   scroll-behavior: smooth;
   color-scheme: dark;
   -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--bg-obsidian-950);
   color: var(--text-neutral-100);
   font-family: var(--font-sans);
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
   margin: 0;
   padding: 0;
+}
+
+/* Ensure media elements never force layout expansion */
+img, svg, video, canvas, audio, iframe, embed, object {
+  max-width: 100%;
 }
 
 ::selection {
