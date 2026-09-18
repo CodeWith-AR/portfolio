@@ -1,4 +1,4 @@
-# 🚀 Abdur Rehman — Personal Portfolio Website
+# 🚀 Abdur Rehman | Personal Portfolio Website
 ### Modern Web & Mobile App Developer | AI & ML Engineer
 
 <div align="center">
